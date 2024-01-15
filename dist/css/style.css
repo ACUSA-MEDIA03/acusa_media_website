@@ -1,0 +1,138 @@
+img {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1224px;
+  margin: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.7;
+  width: 100%;
+  height: 100%;
+  background-color: coral;
+  color: #000000;
+}
+
+header {
+  background-color: #ffffff;
+  padding-top: 0.5rem;
+}
+header .head {
+  position: relative;
+}
+header .head .logo {
+  text-align: center;
+}
+header .head .logo img {
+  width: 100px;
+  height: 100px;
+}
+header .head .hamburger {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translate(-5%, -50%);
+}
+header .head .hamburger i {
+  color: #102082;
+  padding: 0.8rem;
+  border-radius: 100%;
+  background-color: transparent;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: all ease-out 0.5s;
+}
+header .head .hamburger i:hover {
+  background-color: #e5e8eb;
+}
+header .links {
+  background-color: #ffffff;
+  border-top: 3px solid #102082;
+  padding: 1rem 0;
+}
+header .links ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+header .links ul li {
+  text-align: center;
+}
+header .links ul li a {
+  font-weight: bolder;
+  font-size: 12px;
+  transition: all ease-out 0.5s;
+}
+header .links ul li a:hover {
+  color: #102082;
+}
+
+@media (max-width: 880px) {
+  header {
+    background-color: #ffffff;
+    padding-top: 0.5rem;
+  }
+  header .head {
+    position: relative;
+  }
+  header .head .logo {
+    text-align: center;
+  }
+  header .head .logo img {
+    width: 100px;
+    height: 100px;
+  }
+  header .head .hamburger {
+    display: block;
+  }
+  header .links {
+    position: fixed;
+    top: 115px;
+    right: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 3;
+    padding: 0 2rem;
+    transition: all ease-out 0.5s;
+  }
+  header .links ul {
+    display: block;
+  }
+  header .links ul li {
+    background-color: #e5e8eb;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    text-align: left;
+  }
+  header .links ul li a {
+    width: 100%;
+    display: inline-block;
+  }
+  header .links-open {
+    left: 0;
+  }
+}/*# sourceMappingURL=style.css.map */

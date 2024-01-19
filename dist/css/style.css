@@ -60,10 +60,11 @@ h5 {
 .btn {
 	display: inline-block;
 	padding: 1rem 2rem;
+	font-size: 0.9rem;
 	text-transform: uppercase;
 	border: none;
 	outline: none;
-	font-weight: bold;
+	font-weight: bolder;
 	letter-spacing: 2px;
 	border-radius: 10px;
 	cursor: pointer;
@@ -80,15 +81,24 @@ h5 {
 	color: #102082;
 }
 
+.btn.btn-black {
+	background-color: #333333;
+	color: #ffffff;
+}
+
+.btn.btn-black:hover {
+	background-color: #000000;
+	color: #ffffff;
+}
+
 .btn.btn-primary {
 	background-color: #102082;
 	color: #ffffff;
 }
 
-/* .btn.btn-primary:hover {
-	background-color: #102082;
-	color: #ffffff;
-} */
+.btn.btn-primary:hover {
+	opacity: 0.7;
+}
 
 /* BACKGROUND FILL */
 .background-fill {
@@ -211,10 +221,6 @@ footer {
 	border-right: 0.2rem solid #ffff;
 }
 
-/* section {
-	padding: 4rem 0;
-} */
-
 .about-section {
 	background-color: #333333;
 	color: #ffffff;
@@ -242,6 +248,212 @@ footer {
 	height: 70vh;
 }
 
+.common-room-section .container {
+	/* background-color: red; */
+	width: 100%;
+	/* max-width: 2000px; */
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.common-room-section .container .box {
+	background-color: #333333;
+	padding: 4rem;
+	width: 50%;
+	text-align: center;
+	color: #ffffff;
+}
+
+.article-for-week-section {
+	background-color: #ffffff;
+	color: #000000;
+	padding: 5rem 0;
+}
+
+.article-for-week-section h4 {
+	text-align: center;
+	color: #102082;
+}
+
+.article-for-week-section .container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 3rem;
+	margin-top: 3rem;
+}
+
+.article-for-week-section img {
+	width: 450px;
+	height: 400px;
+	flex: 1;
+}
+
+.article-content {
+	flex: 1;
+}
+
+.article-content h6 {
+	margin-top: 1rem;
+}
+
+.article-for-week-section .article-content p {
+	margin: 1rem 0;
+}
+
+.past-executives-section {
+	background-color: #333333;
+	color: #ffffff;
+	padding: 5rem 0;
+}
+
+.past-executives-section .container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 3rem;
+}
+
+.past-executives-section .imgs {
+	flex: 1;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 0.5rem;
+}
+
+.past-executives-section .imgs .img {
+	position: relative;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: all ease-out 0.5s;
+}
+
+.past-executives-section .imgs .img:hover {
+	transform: scale(1.02);
+}
+
+.past-executives-section .imgs .img h6 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 0.5rem 0;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+.past-executives-section .past-executives-content {
+	flex: 1;
+}
+
+.past-executives-section .past-executives-content p {
+	margin: 1rem 0;
+}
+
+.latest-news-section {
+	padding: 5rem 0;
+}
+
+.latest-news-section .container h4 {
+	text-align: center;
+	color: #102082;
+}
+
+.latest-news-section .container .boxes {
+	margin: 3rem 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+
+.latest-news-section .container .boxes .box {
+	background-color: #ffffff;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: all ease-out 0.5s;
+}
+
+.latest-news-section .container .boxes .box:hover {
+	transform: scale(1.02);
+}
+
+.latest-news-section .container .boxes .box .img {
+	height: 200px;
+}
+
+.latest-news-section .container .boxes .box .details {
+	padding: 2rem 1.5rem;
+}
+
+.latest-news-section .container .boxes .box .details h6 {
+	margin-top: 0.5rem;
+}
+
+.latest-news-section .container .boxes .box .details .btn {
+	margin-top: 1.5rem;
+	width: 100%;
+	text-align: center;
+}
+
+.latest-news-section .container .more-news {
+	text-align: center;
+}
+
+.connent-social-media-section {
+	padding: 5rem 0;
+	background-color: #333333;
+	color: #ffffff;
+}
+
+.connent-social-media-section .container {
+	text-align: center;
+}
+
+.connent-social-media-section .container p {
+	width: 60%;
+	margin: 2rem auto;
+}
+
+.connent-social-media-section .container .icons i {
+	font-size: 2rem;
+	margin: 0 1rem;
+	color: #ffffff;
+	transition: all ease-out 0.5s;
+}
+
+.connent-social-media-section .container .icons i:hover {
+	opacity: 0.7;
+}
+
+.connent-social-media-section .container .icons .fa-twitter {
+	color: #1e9beb;
+}
+
+.connent-social-media-section .container .icons .fa-instagram {
+	color: #bf2e8e;
+}
+
+.connent-social-media-section .container .icons .fa-whatsapp {
+	color: #2acb45;
+}
+
+.connent-social-media-section .container .icons .fa-linkedin {
+	color: #0077b5;
+}
+
+.connent-social-media-section .container .icons .fa-tiktok {
+	color: #060000;
+}
+
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 880px) {
 	header {
 		background-color: #ffffff;

@@ -37,16 +37,20 @@ header {
 	background-color: #ffffff;
 	padding-top: 0.5rem;
 }
+
 header .head {
 	position: relative;
 }
+
 header .head .logo {
 	text-align: center;
 }
+
 header .head .logo img {
 	width: 100px;
 	height: 100px;
 }
+
 header .head .hamburger {
 	display: none;
 	position: absolute;
@@ -54,6 +58,7 @@ header .head .hamburger {
 	right: 5%;
 	transform: translate(-5%, -50%);
 }
+
 header .head .hamburger i {
 	color: #102082;
 	padding: 0.8rem;
@@ -63,28 +68,34 @@ header .head .hamburger i {
 	cursor: pointer;
 	transition: all ease-out 0.5s;
 }
+
 header .head .hamburger i:hover {
 	background-color: #e5e8eb;
 }
+
 header .links {
 	background-color: #ffffff;
 	border-top: 3px solid #102082;
 	padding: 1rem 0;
 }
+
 header .links ul {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	text-transform: uppercase;
 }
+
 header .links ul li {
 	text-align: center;
 }
+
 header .links ul li a {
 	font-weight: bolder;
 	font-size: 12px;
 	transition: all ease-out 0.5s;
 }
+
 header .links ul li a:hover {
 	color: #102082;
 }
@@ -95,6 +106,49 @@ footer {
 	margin: 0 auto;
 	text-align: center;
 	font-weight: bold;
+}
+
+/* HOME PAGE */
+.showcase-section {
+	position: relative;
+	height: 70vh;
+}
+
+.showcase-section img {
+	object-fit: cover;
+}
+
+.showcase-section .background-fill {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.showcase-section .details {
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	transform: translate(-10%, -50%);
+	/* width: 90%; */
+	/* margin: 0 auto; */
+	color: #ffffff;
+	/* background-color: red; */
+}
+
+.showcase-section .details h1 {
+	font-size: 5rem;
+}
+
+.showcase-section .details h4 {
+	font-size: 2rem;
+}
+
+/* Cursor */
+.showcase-section .details .txt-type .txt {
+	border-right: 0.2rem solid #ffff;
 }
 
 @media (max-width: 880px) {

@@ -332,6 +332,7 @@ footer {
 	border-radius: 10px;
 	overflow: hidden;
 	transition: all ease-out 0.5s;
+	height: 180px;
 }
 
 .past-executives-section .imgs .img:hover {
@@ -347,6 +348,7 @@ footer {
 	font-weight: bold;
 	letter-spacing: 2px;
 	text-align: center;
+	text-transform: uppercase;
 }
 
 .past-executives-section .past-executives-content {

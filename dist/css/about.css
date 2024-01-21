@@ -1,0 +1,89 @@
+.container {
+	/* padding: 5rem 0; */
+}
+.intro-section {
+	/* padding: 5rem 0; */
+	background-color: #ffffff;
+	color: #000000;
+	text-align: center;
+}
+
+h4 {
+	margin-bottom: 1rem;
+}
+
+.intro-section h4 {
+	color: #102082;
+}
+
+.intro-section p {
+	width: 80%;
+	margin: 0 auto;
+	/* margin-top: 1rem; */
+}
+
+section {
+	margin: 2rem 0;
+	background-color: coral;
+}
+
+section h4 {
+	color: #102082;
+}
+
+/* .our-mission-section {
+}
+
+.meet-our-team-section {
+	background-color: coral;
+} */
+
+.what-we-do-section {
+	padding: 5rem 0;
+}
+
+.what-we-do-section h4 {
+	text-align: center;
+	color: #102082;
+}
+
+.what-we-do-section .boxes {
+	margin: 3rem 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+
+.what-we-do-section .boxes .box {
+	background-color: #ffffff;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: all ease-out 0.5s;
+}
+
+.what-we-do-section .boxes .box:hover {
+	transform: scale(1.02);
+}
+
+.what-we-do-section .boxes .box .img {
+	height: 200px;
+}
+
+.what-we-do-section .boxes .box .details {
+	padding: 2rem 1.5rem;
+}
+
+.what-we-do-section .boxes .box .details p {
+	margin-top: 0.5rem;
+}
+
+.what-we-do-section .boxes .box .details .btn {
+	margin-top: 1.5rem;
+	width: 100%;
+	text-align: center;
+}
+
+.what-we-do-section .more-news {
+	text-align: center;
+}

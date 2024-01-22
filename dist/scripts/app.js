@@ -14,7 +14,6 @@ hamburgerMenu.addEventListener("click", (e) => {
 // Typewriter effect on the Home page showcase
 class Typewriter {
 	constructor(txtElement, words, wait = 3000) {
-		console.log("yes");
 		this.txtElement = txtElement;
 		this.words = words;
 		this.txt = "";

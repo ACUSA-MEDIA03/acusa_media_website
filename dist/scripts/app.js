@@ -220,6 +220,9 @@ async function displayNewsDetails() {
 	// Insert the news and showcase section
 	document.querySelector("#news-details").appendChild(div);
 	document.querySelector("#showcase-section").appendChild(img);
+
+	// Change the title of the page
+	document.title = `${newsDetails[0].title} | ACUSA Media`;
 }
 
 // Init on the DOM Load

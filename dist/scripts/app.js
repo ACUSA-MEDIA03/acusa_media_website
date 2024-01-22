@@ -81,21 +81,20 @@ function typeWriter() {
 	new Typewriter(txtElement, words, wait);
 }
 
-// Init Typewriter effect on the DOM Load
-document.addEventListener("DOMContentLoaded", init);
-
 // Display the latest news
 async function displayLatestNews() {
+	// Get the news from the database
 	const res = await fetch("./data/news.json");
 	const data = await res.json();
 	const latestNews = data.news[0];
 
+	// Check for the length of the news post
 	const newsPost =
 		latestNews.post.length <= 500
 			? latestNews.post
 			: `${latestNews.post.substring(0, 500)}...`;
-	console.log(latestNews);
 
+	// Create the latest news details
 	const div = document.createElement("div");
 	div.classList.add("latest-news");
 	div.innerHTML = `
@@ -117,26 +116,114 @@ async function displayLatestNews() {
 					</div>
 	`;
 
+	// Insert latest news section to the HTML page
 	document.querySelector("#latest-news-section").appendChild(div);
+}
+
+// Display the all news
+async function displayAllNews() {
+	// Get all the news from the database
+	const res = await fetch("./data/news.json");
+	const data = await res.json();
+	const allNews = data.news;
+
+	// Loop through the news and display them one-by-one
+	allNews.forEach((news) => {
+		const div = document.createElement("div");
+		div.classList.add("box");
+		div.innerHTML = `
+						<div class="img">
+							<img
+								src="./images/${news.imgURL}"
+								alt="${news.title}"
+							/>
+						</div>
+						<div class="details">
+							<h5>${news.title}</h5>
+							<h6>${news.date}</h6>
+							<a class="btn btn-black"href="news-details.html?id=${news.id}"
+								>Continue reading</a
+							>
+						</div>
+					`;
+
+		// Insert the new news into the HTML page
+		document.querySelector("#boxes").appendChild(div);
+	});
+}
+
+// Display the top 3 news for the home page
+async function displayTopThreeNews() {
+	// Get all the news from the database
+	const res = await fetch("./data/news.json");
+	const data = await res.json();
+	const topThreeNews = data.news.slice(0, 3);
+
+	// Loop through the news and display them one-by-one
+	topThreeNews.forEach((news) => {
+		const div = document.createElement("div");
+		div.classList.add("box");
+		div.innerHTML = `
+						<div class="img">
+							<img
+								src="./images/${news.imgURL}"
+								alt="${news.title}"
+							/>
+						</div>
+						<div class="details">
+							<h5>${news.title}</h5>
+							<h6>${news.date}</h6>
+							<a class="btn btn-black"href="news-details.html?id=${news.id}"
+								>Continue reading</a
+							>
+						</div>
+					`;
+
+		// Insert the new news into the HTML page
+		document.querySelector("#boxes").appendChild(div);
+	});
 }
 
 // Display the news details
 async function displayNewsDetails() {
+	// Get the search query from the URL
 	const newsId = window.location.search.split("=")[1];
-	console.log(typeof newsId);
 
+	// Get the news from the database
 	const res = await fetch("./data/news.json");
 	const data = await res.json();
 	const news = data.news;
 
-	console.log(news);
-
+	// Get the news that correlates with the specific ID
 	const newsDetails = news.filter((res) => {
 		return res.id == newsId;
 	});
 
-	console.log(newsDetails);
+	// Create a news detail
+	const div = document.createElement("div");
+	div.classList.add("details");
+	div.innerHTML = `
+					<div class="head">
+						<h4>${newsDetails[0].title}</h4>
+						<h5>Posted on ${newsDetails[0].date}</h5>
+					</div>
+					<div class="content">
+						<p>${newsDetails[0].post}</p>
+					</div>
+					`;
+
+	// Insert the news image to the showcase section
+	const img = document.createElement("img");
+	img.src = `images/${newsDetails[0].imgURL}`;
+	img.alt = newsDetails[0].title;
+
+	// Insert the news and showcase section
+	document.querySelector("#news-details").appendChild(div);
+	document.querySelector("#showcase-section").appendChild(img);
 }
+
+// Init on the DOM Load
+document.addEventListener("DOMContentLoaded", init);
 
 // Init App
 function init() {
@@ -144,9 +231,11 @@ function init() {
 		case "/":
 		case "/dist/index.html":
 			typeWriter();
+			displayTopThreeNews();
 			break;
 		case "/dist/news.html":
 			displayLatestNews();
+			displayAllNews();
 			break;
 		case "/dist/news-details.html":
 			displayNewsDetails();

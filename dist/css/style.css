@@ -226,6 +226,10 @@ footer {
 	height: 100%;
 }
 
+.showcase-section .details h1 {
+	text-transform: uppercase;
+}
+
 /* Cursor */
 .showcase-section .details .txt-type .txt {
 	border-right: 0.2rem solid #ffff;

@@ -18,31 +18,35 @@
 
 .latest-news-section {
 	/* background-color: brown; */
+	margin: 3rem 0;
 }
 
-.latest-news-section #latest-news {
+.latest-news-section .latest-news {
 	/* background-color: cornflowerblue; */
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
 	gap: 2rem;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.latest-news-section #latest-news img {
+.latest-news-section .latest-news .img {
 	width: 350px;
 	height: 350px;
+	flex-direction: 1;
 }
 
-.latest-news-section #latest-news .news-details {
+.latest-news-section .latest-news .news-details {
 	/* background-color: darkorchid; */
 	padding: 2rem;
+	flex: 2;
 }
 
-.latest-news-section #latest-news .news-details h5 {
+.latest-news-section .latest-news .news-details h5 {
 	text-transform: uppercase;
 	margin-bottom: 0.5rem;
 }
 
-.latest-news-section #latest-news .news-details p {
+.latest-news-section .latest-news .news-details p {
 	margin: 1rem 0;
 }

@@ -71,15 +71,85 @@ class Typewriter {
 	}
 }
 
-// Init Typewriter effect on the DOM Load
-document.addEventListener("DOMContentLoaded", init);
-
-// Init Typewriter effect
-function init() {
+// Typewriter function
+function typeWriter() {
 	const txtElement = document.querySelector(".txt-type");
 	const words = JSON.parse(txtElement.getAttribute("data-words"));
 	const wait = txtElement.getAttribute("data-wait");
 
 	// Init Typewriter
 	new Typewriter(txtElement, words, wait);
+}
+
+// Init Typewriter effect on the DOM Load
+document.addEventListener("DOMContentLoaded", init);
+
+// Display the latest news
+async function displayLatestNews() {
+	const res = await fetch("./data/news.json");
+	const data = await res.json();
+	const latestNews = data.news[0];
+
+	const newsPost =
+		latestNews.post.length <= 500
+			? latestNews.post
+			: `${latestNews.post.substring(0, 500)}...`;
+	console.log(latestNews);
+
+	const div = document.createElement("div");
+	div.classList.add("latest-news");
+	div.innerHTML = `
+					<div class="img">
+						<img
+							src="images/${latestNews.imgURL}"
+							alt="${latestNews.title}"
+						/>
+					</div>
+					<div class="news-details">
+						<h5>${latestNews.title}</h5>
+						<h6>${latestNews.date}</h6>
+						<p>
+							${newsPost}
+						</p>
+						<a class="btn btn-black" href="news-details.html?id=${latestNews.id}"
+							>Continue reading</a
+						>
+					</div>
+	`;
+
+	document.querySelector("#latest-news-section").appendChild(div);
+}
+
+// Display the news details
+async function displayNewsDetails() {
+	const newsId = window.location.search.split("=")[1];
+	console.log(typeof newsId);
+
+	const res = await fetch("./data/news.json");
+	const data = await res.json();
+	const news = data.news;
+
+	console.log(news);
+
+	const newsDetails = news.filter((res) => {
+		return res.id == newsId;
+	});
+
+	console.log(newsDetails);
+}
+
+// Init App
+function init() {
+	switch (window.location.pathname) {
+		case "/":
+		case "/dist/index.html":
+			typeWriter();
+			break;
+		case "/dist/news.html":
+			displayLatestNews();
+			break;
+		case "/dist/news-details.html":
+			displayNewsDetails();
+			break;
+	}
 }

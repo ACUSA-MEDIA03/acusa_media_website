@@ -26,6 +26,7 @@ h4 {
 
 .container section h4 {
 	color: #102082;
+	text-align: center;
 }
 
 .container .what-we-do-section {
@@ -33,7 +34,6 @@ h4 {
 }
 
 .container .what-we-do-section h4 {
-	text-align: center;
 	color: #102082;
 }
 

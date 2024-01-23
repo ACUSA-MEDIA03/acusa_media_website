@@ -1,0 +1,127 @@
+.archives-container {
+	padding: 5rem 0;
+}
+
+.intro-section {
+	/* padding: 5rem 0; */
+	background-color: #ffffff;
+	color: #000000;
+	text-align: center;
+}
+
+.intro-section h4 {
+	color: #102082;
+	text-transform: uppercase;
+}
+
+.intro-section p {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 1rem;
+}
+
+.latest-archive-section {
+	/* background-color: brown; */
+	/* margin: 3rem 0; */
+	margin-top: 4rem;
+}
+
+.latest-archive-section .latest-archive {
+	/* background-color: cornflowerblue; */
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	/* gap: 2rem; */
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	transition: all ease-out 0.5s;
+	border-radius: 10px;
+	overflow: hidden;
+	/* background-color: red; */
+}
+
+.latest-archive-section .latest-archive:hover {
+	transform: scale(1.02);
+}
+
+.latest-archive-section .latest-archive .serial-number {
+	height: 350px;
+	position: relative;
+	flex: 1;
+}
+
+.latest-archive-section .latest-archive .serial-number img {
+	height: 100%;
+}
+
+.latest-archive-section .latest-archive .serial-number h4 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #ffffff;
+}
+
+.latest-archive-section .latest-archive .archive-details {
+	/* background-color: darkorchid; */
+	padding: 2rem;
+	flex: 2;
+}
+
+.latest-archive-section .latest-archive .archive-details h5 {
+	text-transform: uppercase;
+	margin-bottom: 0.5rem;
+}
+
+.latest-archive-section .latest-archive .archive-details p {
+	margin: 1rem 0;
+}
+
+.all-archives-section .boxes {
+	margin: 3rem 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+
+.all-archives-section .boxes .box {
+	background-color: #ffffff;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: all ease-out 0.5s;
+}
+
+.all-archives-section .boxes .box:hover {
+	transform: scale(1.02);
+}
+
+.all-archives-section .boxes .box .serial-number {
+	background-color: #102082;
+	/* display: flex; */
+	/* align-items: center; */
+	/* justify-content: center; */
+	height: 200px;
+	position: relative;
+}
+
+.all-archives-section .boxes .box .serial-number h4 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #ffffff;
+}
+
+.all-archives-section .boxes .box .details {
+	padding: 2rem 1.5rem;
+}
+
+.all-archives-section .boxes .box .details h6 {
+	margin-top: 0.5rem;
+}
+
+.all-archives-section .boxes .box .details .btn {
+	margin-top: 1.5rem;
+	width: 100%;
+	text-align: center;
+}

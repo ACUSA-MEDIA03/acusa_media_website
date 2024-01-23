@@ -120,7 +120,7 @@ async function displayLatestNews() {
 	document.querySelector("#latest-news-section").appendChild(div);
 }
 
-// Display the all news
+// Display all news
 async function displayAllNews() {
 	// Get all the news from the database
 	const res = await fetch("./data/news.json");
@@ -293,7 +293,7 @@ async function displayArticleForTheWeek() {
 						<p>
 							${articlePost}
 						</p>
-						<a class="btn btn-black" href="article.html"
+						<a class="btn btn-black" href="article-details.html?id=${articleForTheWeek.id}"
 							>Continue reading</a
 						>
 					</div>
@@ -303,11 +303,11 @@ async function displayArticleForTheWeek() {
 					/>
 	`;
 
-	// Insert latest news section to the HTML page
+	// Insert article for the week section to the HTML page
 	document.querySelector("#article-for-week-section").appendChild(div);
 }
 
-// Display the all articles
+// Display all articles
 async function displayAllArticles() {
 	// Get all the articles from the database
 	const res = await fetch("./data/articles.json");
@@ -329,7 +329,6 @@ async function displayAllArticles() {
 						<div class="details">
 							<h5>${article.title}</h5>
 							<h6>${article.date}</h6>
-							<p>${article.post[0].substring(0, 100)}...</p>
 							<a class="btn btn-black"href="article-details.html?id=${article.id}"
 								>Continue reading</a
 							>
@@ -367,10 +366,6 @@ async function displayArticleDetails() {
 					</div>
 					`;
 
-	// <div class="content">
-	// 	<p>${articleDetails[0].post}</p>
-	// </div>
-
 	// Insert the news image to the showcase section
 	const img = document.createElement("img");
 	img.src = `images/${articleDetails[0].imgURL}`;
@@ -391,6 +386,127 @@ async function displayArticleDetails() {
 
 	// Change the title of the page
 	document.title = `${articleDetails[0].title} | ACUSA Media`;
+}
+
+// Display the latest archive
+async function displayLatestArchive() {
+	// Get the archives from the database
+	const res = await fetch("./data/archives.json");
+	const data = await res.json();
+	const latestArchive = data.archives[0];
+
+	// Check for the length of the archive post
+	const archivePost =
+		latestArchive.post[0].length <= 500
+			? latestArchive.post[0]
+			: `${latestArchive.post[0].substring(0, 500)}...`;
+
+	// Create the latest news details
+	const div = document.createElement("div");
+	div.classList.add("latest-archive");
+	div.innerHTML = `
+					<div class="serial-number">
+						<img
+							src="./images/archives.jpg"
+							alt="${latestArchive.serialNumber}"
+						/>
+						<h4>${latestArchive.serialNumber}</h4>
+					</div>
+					<div class="archive-details">
+						<h5>${latestArchive.title}</h5>
+						<h6>${latestArchive.date}</h6>
+						<p>
+							${archivePost}
+						</p>
+						<a class="btn btn-black" href="archive-details.html?id=${latestArchive.id}"
+							>Continue reading</a
+						>
+					</div>
+	`;
+
+	// Insert latest news section to the HTML page
+	document.querySelector("#latest-archive-section").appendChild(div);
+}
+
+// Display all archives
+async function displayAllArchives() {
+	// Get all the archives from the database
+	const res = await fetch("./data/archives.json");
+	const data = await res.json();
+	const allArchives = data.archives;
+
+	// Loop through the news and display them one-by-one
+	allArchives.slice(1).forEach((archive) => {
+		const div = document.createElement("div");
+		div.classList.add("box");
+
+		div.innerHTML = `
+						<div class="serial-number">
+							<img
+								src="./images/archives.jpg"
+								alt="${archive.serialNumber}"
+							/>
+							<div class='background-fill'></div>
+							<h4>${archive.serialNumber}</h4>
+						</div>
+						<div class="details">
+							<h5>${archive.title}</h5>
+							<h6>${archive.date}</h6>
+							<a class="btn btn-black"href="archive-details.html?id=${archive.id}"
+								>Continue reading</a
+							>
+						</div>
+					`;
+
+		// Insert the new archive into the HTML page
+		document.querySelector("#boxes").appendChild(div);
+	});
+}
+
+// Display the archive details
+async function displayArchiveDetails() {
+	// Get the search query from the URL
+	const archiveId = window.location.search.split("=")[1];
+
+	// Get the news from the database
+	const res = await fetch("./data/archives.json");
+	const data = await res.json();
+	const archives = data.archives;
+
+	// Get the archive that correlates with the specific ID
+	const archiveDetails = archives.filter((res) => {
+		return res.id == archiveId;
+	});
+
+	// Create a news detail
+	const div = document.createElement("div");
+	div.classList.add("details");
+	div.innerHTML = `
+					<div class="head">
+						<h4>${archiveDetails[0].title}</h4>
+						<h5>Posted on ${archiveDetails[0].date}</h5>
+					</div>
+					`;
+
+	// Insert the archive serial number to the showcase section
+	const h1 = document.createElement("h1");
+	h1.innerText = archiveDetails[0].serialNumber;
+
+	// Insert the news and showcase section
+	document.querySelector("#archive-details").appendChild(div);
+	document.querySelector("#showcase-section").appendChild(h1);
+
+	archiveDetails[0].post.forEach((p) => {
+		// Create paragraph for the archive content
+		const contentDiv = document.createElement("div");
+		contentDiv.classList.add("content");
+		contentDiv.innerHTML = `<p>${p}</p>`;
+
+		document.querySelector("#archive-details").appendChild(contentDiv);
+	});
+
+	// Change the title of the page
+	document.title = `${archiveDetails[0].title} | ACUSA Media`;
 }
 
 // Init on the DOM Load
@@ -418,6 +534,13 @@ function init() {
 			break;
 		case "/dist/article-details.html":
 			displayArticleDetails();
+			break;
+		case "/dist/archives.html":
+			displayLatestArchive();
+			displayAllArchives();
+			break;
+		case "/dist/archive-details.html":
+			displayArchiveDetails();
 			break;
 	}
 }

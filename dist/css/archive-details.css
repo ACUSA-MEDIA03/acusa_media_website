@@ -1,0 +1,56 @@
+.archive-container {
+	padding: 5rem 0;
+}
+
+.archive-showcase {
+	position: relative;
+}
+
+.archive-showcase h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #ffffff;
+}
+
+.head {
+	text-align: center;
+}
+
+.head h4 {
+	text-transform: uppercase;
+	color: #102082;
+}
+
+.head h5 {
+	color: #333333;
+	margin: 1rem 0 3rem 0;
+}
+
+.content p:first-child {
+	margin-bottom: 2rem;
+}
+
+.signature-section {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.signature-section .box {
+	text-align: center;
+}
+
+.signature-section .box h4 {
+	color: #102082;
+	font-size: 1.5rem;
+}
+
+.signature-section .box h5 {
+	font-size: 0.8rem;
+}
+
+.signature-section .box .tel a {
+	color: #d33131;
+}

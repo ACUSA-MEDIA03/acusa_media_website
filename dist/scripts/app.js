@@ -225,6 +225,79 @@ async function displayNewsDetails() {
 	document.title = `${newsDetails[0].title} | ACUSA Media`;
 }
 
+// Display the latest article
+async function displayLatestArticle() {
+	// Get the articles from the database
+	const res = await fetch("./data/articles.json");
+	const data = await res.json();
+	const latestArticle = data.articles[0];
+
+	// Check for the length of the news post
+	const articlePost =
+		latestArticle.post.length <= 500
+			? latestArticle.post
+			: `${latestArticle.post.substring(0, 500)}...`;
+
+	// Create the latest news details
+	const div = document.createElement("div");
+	div.classList.add("latest-article");
+	div.innerHTML = `
+					<div class="img">
+						<img
+							src="images/${latestArticle.imgURL}"
+							alt="${latestArticle.title}"
+						/>
+					</div>
+					<div class="article-details">
+						<h5>${latestArticle.title}</h5>
+						<h6>${latestArticle.date}</h6>
+						<p>
+							${articlePost}
+						</p>
+						<a class="btn btn-black" href="article-details.html?id=${latestArticle.id}"
+							>Continue reading</a
+						>
+					</div>
+	`;
+
+	// Insert latest news section to the HTML page
+	document.querySelector("#latest-article-section").appendChild(div);
+}
+
+// Display the all articles
+async function displayAllArticles() {
+	// Get all the articles from the database
+	const res = await fetch("./data/articles.json");
+	const data = await res.json();
+	const allArticles = data.articles;
+
+	// Loop through the news and display them one-by-one
+	allArticles.forEach((article) => {
+		const div = document.createElement("div");
+		div.classList.add("box");
+
+		div.innerHTML = `
+						<div class="img">
+							<img
+								src="./images/${article.imgURL}"
+								alt="${article.title}"
+							/>
+						</div>
+						<div class="details">
+							<h5>${article.title}</h5>
+							<h6>${article.date}</h6>
+							<p>${article.post.substring(0, 100)}...</p>
+							<a class="btn btn-black"href="article-details.html?id=${article.id}"
+								>Continue reading</a
+							>
+						</div>
+					`;
+
+		// Insert the new article into the HTML page
+		document.querySelector("#boxes").appendChild(div);
+	});
+}
+
 // Init on the DOM Load
 document.addEventListener("DOMContentLoaded", init);
 
@@ -242,6 +315,10 @@ function init() {
 			break;
 		case "/dist/news-details.html":
 			displayNewsDetails();
+			break;
+		case "/dist/articles.html":
+			displayLatestArticle();
+			displayAllArticles();
 			break;
 	}
 }

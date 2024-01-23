@@ -90,9 +90,9 @@ async function displayLatestNews() {
 
 	// Check for the length of the news post
 	const newsPost =
-		latestNews.post.length <= 500
-			? latestNews.post
-			: `${latestNews.post.substring(0, 500)}...`;
+		latestNews.post[0].length <= 500
+			? latestNews.post[0]
+			: `${latestNews.post[0].substring(0, 500)}...`;
 
 	// Create the latest news details
 	const div = document.createElement("div");
@@ -128,7 +128,7 @@ async function displayAllNews() {
 	const allNews = data.news;
 
 	// Loop through the news and display them one-by-one
-	allNews.forEach((news) => {
+	allNews.slice(1).forEach((news) => {
 		const div = document.createElement("div");
 		div.classList.add("box");
 		div.innerHTML = `
@@ -207,9 +207,6 @@ async function displayNewsDetails() {
 						<h4>${newsDetails[0].title}</h4>
 						<h5>Posted on ${newsDetails[0].date}</h5>
 					</div>
-					<div class="content">
-						<p>${newsDetails[0].post}</p>
-					</div>
 					`;
 
 	// Insert the news image to the showcase section
@@ -220,6 +217,17 @@ async function displayNewsDetails() {
 	// Insert the news and showcase section
 	document.querySelector("#news-details").appendChild(div);
 	document.querySelector("#showcase-section").appendChild(img);
+
+	newsDetails[0].post.forEach((p) => {
+		// Create paragraph for the article content
+		const contentDiv = document.createElement("div");
+		contentDiv.classList.add("content");
+		contentDiv.innerHTML = `<p>${p}</p>`;
+
+		// console.log(paragraphs);
+
+		document.querySelector("#news-details").appendChild(contentDiv);
+	});
 
 	// Change the title of the page
 	document.title = `${newsDetails[0].title} | ACUSA Media`;
@@ -234,9 +242,9 @@ async function displayLatestArticle() {
 
 	// Check for the length of the news post
 	const articlePost =
-		latestArticle.post.length <= 500
-			? latestArticle.post
-			: `${latestArticle.post.substring(0, 500)}...`;
+		latestArticle.post[0].length <= 500
+			? latestArticle.post[0]
+			: `${latestArticle.post[0].substring(0, 500)}...`;
 
 	// Create the latest news details
 	const div = document.createElement("div");
@@ -252,7 +260,7 @@ async function displayLatestArticle() {
 						<h5>${latestArticle.title}</h5>
 						<h6>${latestArticle.date}</h6>
 						<p>
-							${articlePost}
+							${articlePost}...
 						</p>
 						<a class="btn btn-black" href="article-details.html?id=${latestArticle.id}"
 							>Continue reading</a
@@ -272,7 +280,7 @@ async function displayAllArticles() {
 	const allArticles = data.articles;
 
 	// Loop through the news and display them one-by-one
-	allArticles.forEach((article) => {
+	allArticles.slice(1).forEach((article) => {
 		const div = document.createElement("div");
 		div.classList.add("box");
 
@@ -286,7 +294,7 @@ async function displayAllArticles() {
 						<div class="details">
 							<h5>${article.title}</h5>
 							<h6>${article.date}</h6>
-							<p>${article.post.substring(0, 100)}...</p>
+							<p>${article.post[0].substring(0, 100)}...</p>
 							<a class="btn btn-black"href="article-details.html?id=${article.id}"
 								>Continue reading</a
 							>
@@ -296,6 +304,60 @@ async function displayAllArticles() {
 		// Insert the new article into the HTML page
 		document.querySelector("#boxes").appendChild(div);
 	});
+}
+
+// Display the article details
+async function displayArticleDetails() {
+	// Get the search query from the URL
+	const articleId = window.location.search.split("=")[1];
+
+	// Get the news from the database
+	const res = await fetch("./data/articles.json");
+	// const res = await fetch("./data/test.json");
+	const data = await res.json();
+	const articles = data.articles;
+
+	// Get the article that correlates with the specific ID
+	const articleDetails = articles.filter((res) => {
+		return res.id == articleId;
+	});
+
+	// Create a news detail
+	const div = document.createElement("div");
+	div.classList.add("details");
+	div.innerHTML = `
+					<div class="head">
+						<h4>${articleDetails[0].title}</h4>
+						<h5>Posted on ${articleDetails[0].date}</h5>
+					</div>
+					`;
+
+	// <div class="content">
+	// 	<p>${articleDetails[0].post}</p>
+	// </div>
+
+	// Insert the news image to the showcase section
+	const img = document.createElement("img");
+	img.src = `images/${articleDetails[0].imgURL}`;
+	img.alt = articleDetails[0].title;
+
+	// Insert the news and showcase section
+	document.querySelector("#article-details").appendChild(div);
+	document.querySelector("#showcase-section").appendChild(img);
+
+	articleDetails[0].post.forEach((p) => {
+		// Create paragraph for the article content
+		const contentDiv = document.createElement("div");
+		contentDiv.classList.add("content");
+		contentDiv.innerHTML = `<p>${p}</p>`;
+
+		// console.log(paragraphs);
+
+		document.querySelector("#article-details").appendChild(contentDiv);
+	});
+
+	// Change the title of the page
+	document.title = `${articleDetails[0].title} | ACUSA Media`;
 }
 
 // Init on the DOM Load
@@ -319,6 +381,9 @@ function init() {
 		case "/dist/articles.html":
 			displayLatestArticle();
 			displayAllArticles();
+			break;
+		case "/dist/article-details.html":
+			displayArticleDetails();
 			break;
 	}
 }

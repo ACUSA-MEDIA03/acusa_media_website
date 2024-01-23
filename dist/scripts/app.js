@@ -224,8 +224,6 @@ async function displayNewsDetails() {
 		contentDiv.classList.add("content");
 		contentDiv.innerHTML = `<p>${p}</p>`;
 
-		// console.log(paragraphs);
-
 		document.querySelector("#news-details").appendChild(contentDiv);
 	});
 
@@ -260,7 +258,7 @@ async function displayLatestArticle() {
 						<h5>${latestArticle.title}</h5>
 						<h6>${latestArticle.date}</h6>
 						<p>
-							${articlePost}...
+							${articlePost}
 						</p>
 						<a class="btn btn-black" href="article-details.html?id=${latestArticle.id}"
 							>Continue reading</a
@@ -270,6 +268,43 @@ async function displayLatestArticle() {
 
 	// Insert latest news section to the HTML page
 	document.querySelector("#latest-article-section").appendChild(div);
+}
+
+// Display the article for the week
+async function displayArticleForTheWeek() {
+	// Get the articles from the database
+	const res = await fetch("./data/articles.json");
+	const data = await res.json();
+	const articleForTheWeek = data.articles[0];
+
+	// Check for the length of the news post
+	const articlePost =
+		articleForTheWeek.post[0].length <= 500
+			? articleForTheWeek.post[0]
+			: `${articleForTheWeek.post[0].substring(0, 500)}...`;
+
+	// Create the latest news details
+	const div = document.createElement("div");
+	div.classList.add("container");
+	div.innerHTML = `
+					<div class="article-content">
+						<h5>${articleForTheWeek.title}</h5>
+						<h6>Posted on ${articleForTheWeek.date}</h6>
+						<p>
+							${articlePost}
+						</p>
+						<a class="btn btn-black" href="article.html"
+							>Continue reading</a
+						>
+					</div>
+					<img
+						src="./images/${articleForTheWeek.imgURL}"
+						alt="${articleForTheWeek.title}"
+					/>
+	`;
+
+	// Insert latest news section to the HTML page
+	document.querySelector("#article-for-week-section").appendChild(div);
 }
 
 // Display the all articles
@@ -351,8 +386,6 @@ async function displayArticleDetails() {
 		contentDiv.classList.add("content");
 		contentDiv.innerHTML = `<p>${p}</p>`;
 
-		// console.log(paragraphs);
-
 		document.querySelector("#article-details").appendChild(contentDiv);
 	});
 
@@ -370,6 +403,7 @@ function init() {
 		case "/dist/index.html":
 			typeWriter();
 			displayTopThreeNews();
+			displayArticleForTheWeek();
 			break;
 		case "/dist/news.html":
 			displayLatestNews();

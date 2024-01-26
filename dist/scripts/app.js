@@ -518,6 +518,7 @@ async function openImageModal() {
 	images.forEach((image) => {
 		image.onclick = () => {
 			document.querySelector("#image-modal").style.display = "flex";
+			document.querySelector("main").style.filter = blur("20px");
 			document.querySelector("#image-modal img").src =
 				image.getAttribute("src");
 			document.querySelector("#image-modal img").alt =

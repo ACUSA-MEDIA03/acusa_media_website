@@ -162,7 +162,7 @@ header .head .hamburger i {
 }
 
 header .head .hamburger i:hover {
-	background-color: #e5e8eb;
+	color: #000000;
 }
 
 header .links {
@@ -310,7 +310,8 @@ footer {
 		height: 100vh;
 		background-color: #ffffff;
 		z-index: 3;
-		padding: 0 2rem;
+		/* padding: 0 2rem; */
+
 		transition: all ease-out 0.5s;
 	}
 	header .links ul {

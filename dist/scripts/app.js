@@ -509,6 +509,45 @@ async function displayArchiveDetails() {
 	document.title = `${archiveDetails[0].title} | ACUSA Media`;
 }
 
+// Display the archive details
+async function openImageModal() {
+	// Grab the images
+	const images = document.querySelectorAll(".photo img");
+
+	// Open the image that was clicked on
+	images.forEach((image) => {
+		image.onclick = () => {
+			document.querySelector("#image-modal").style.display = "flex";
+			document.querySelector("#image-modal img").src =
+				image.getAttribute("src");
+			document.querySelector("#image-modal img").alt =
+				image.getAttribute("alt");
+		};
+	});
+
+	// Close the modal with the icon
+	document.querySelector(".fa-times").onclick = () =>
+		(document.querySelector("#image-modal").style.display = "none");
+
+	// Also close the modal with the escape key
+	const keyDownHandler = (e) => {
+		if (e.key === "Escape") {
+			e.preventDefault();
+
+			// 👇️ Close the modal
+			document.querySelector("#image-modal").style.display = "none";
+		}
+	};
+
+	// Call the function
+	document.addEventListener("keydown", keyDownHandler);
+
+	// 👇️ clean up event listener
+	return () => {
+		document.removeEventListener("keydown", keyDownHandler);
+	};
+}
+
 // Init on the DOM Load
 document.addEventListener("DOMContentLoaded", init);
 
@@ -541,6 +580,9 @@ function init() {
 			break;
 		case "/dist/archive-details.html":
 			displayArchiveDetails();
+			break;
+		case "/dist/gallery.html":
+			openImageModal();
 			break;
 	}
 }

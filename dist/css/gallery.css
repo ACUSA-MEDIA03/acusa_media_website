@@ -40,7 +40,7 @@ h4 {
 }
 
 .photo:active {
-	transform: scale(0.5);
+	/* transform: scale(0.5); */
 }
 
 .photo:nth-of-type(1) {
@@ -100,7 +100,7 @@ h4 {
 	width: 600px;
 	border-radius: 10px;
 	-webkit-animation: zoom 0.5s;
-	animation: zoom 0.6s;
+	animation: zoom 0.5s;
 	/* z-index: 50; */
 }
 

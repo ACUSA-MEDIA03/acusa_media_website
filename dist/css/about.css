@@ -1,5 +1,4 @@
 .intro-section {
-	/* padding: 5rem 0; */
 	background-color: #ffffff;
 	color: #000000;
 	text-align: center;
@@ -16,21 +15,15 @@ h4 {
 .intro-section p {
 	width: 80%;
 	margin: 0 auto;
-	/* margin-top: 1rem; */
 }
 
 .container section {
 	margin: 3rem 0;
-	/* background-color: coral; */
 }
 
 .container section h4 {
 	color: #102082;
 	text-align: center;
-}
-
-.container .what-we-do-section {
-	/* padding: 5rem 0; */
 }
 
 .container .what-we-do-section h4 {

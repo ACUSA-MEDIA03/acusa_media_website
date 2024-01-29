@@ -3,7 +3,6 @@
 }
 
 .intro-section {
-	/* padding: 5rem 0; */
 	background-color: #ffffff;
 	color: #000000;
 	text-align: center;
@@ -21,22 +20,17 @@
 }
 
 .latest-archive-section {
-	/* background-color: brown; */
-	/* margin: 3rem 0; */
 	margin-top: 4rem;
 }
 
 .latest-archive-section .latest-archive {
-	/* background-color: cornflowerblue; */
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
-	/* gap: 2rem; */
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	transition: all ease-out 0.5s;
 	border-radius: 10px;
 	overflow: hidden;
-	/* background-color: red; */
 }
 
 .latest-archive-section .latest-archive:hover {
@@ -62,7 +56,6 @@
 }
 
 .latest-archive-section .latest-archive .archive-details {
-	/* background-color: darkorchid; */
 	padding: 2rem;
 	flex: 2;
 }
@@ -97,9 +90,6 @@
 
 .all-archives-section .boxes .box .serial-number {
 	background-color: #102082;
-	/* display: flex; */
-	/* align-items: center; */
-	/* justify-content: center; */
 	height: 200px;
 	position: relative;
 }

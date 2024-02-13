@@ -67,6 +67,7 @@ h5 {
 	outline: none;
 	font-weight: bolder;
 	letter-spacing: 2px;
+	text-align: center;
 	border-radius: 10px;
 	cursor: pointer;
 	transition: all ease-out 0.5s;
@@ -124,10 +125,20 @@ h5 {
 	height: 100%;
 }
 
+main {
+	margin-top: 150px;
+}
+
 /* HEADER SECTION */
 header {
 	background-color: #ffffff;
 	padding-top: 0.5rem;
+	position: fixed;
+	height: 150px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
 }
 
 header .head {
@@ -139,8 +150,8 @@ header .head .logo {
 }
 
 header .head .logo img {
-	width: 100px;
-	height: 100px;
+	width: 80px;
+	height: 80px;
 }
 
 header .head .hamburger {
@@ -156,7 +167,7 @@ header .head .hamburger i {
 	padding: 0.8rem;
 	border-radius: 100%;
 	background-color: transparent;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	cursor: pointer;
 	transition: all ease-out 0.5s;
 }
@@ -169,6 +180,7 @@ header .links {
 	background-color: #ffffff;
 	border-top: 3px solid #102082;
 	padding: 1rem 0;
+	border-bottom: 3px solid #102082;
 }
 
 header .links ul {
@@ -284,9 +296,14 @@ footer {
 
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 880px) {
+	main {
+		margin-top: 100px;
+	}
 	header {
-		background-color: #ffffff;
-		padding-top: 0.5rem;
+		/* background-color: #ffffff;
+		padding-top: 0.5rem; */
+		height: 100px;
+		border-bottom: 3px solid #102082;
 	}
 	header .head {
 		position: relative;
@@ -294,16 +311,16 @@ footer {
 	header .head .logo {
 		text-align: center;
 	}
-	header .head .logo img {
+	/* header .head .logo img {
 		width: 100px;
 		height: 100px;
-	}
+	} */
 	header .head .hamburger {
 		display: block;
 	}
 	header .links {
 		position: fixed;
-		top: 115px;
+		top: 100px;
 		right: 0;
 		left: -100%;
 		width: 100%;
@@ -311,6 +328,7 @@ footer {
 		background-color: #ffffff;
 		z-index: 3;
 		/* padding: 0 2rem; */
+		border-top: none;
 
 		transition: all ease-out 0.5s;
 	}

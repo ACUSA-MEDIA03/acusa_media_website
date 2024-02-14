@@ -125,6 +125,32 @@ h5 {
 	height: 100%;
 }
 
+/* FORM */
+form div {
+	margin: 1rem 0;
+}
+
+form button {
+	font-family: "Montserrat", sans-serif;
+}
+
+form label {
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+
+form input,
+form textarea {
+	width: 100%;
+	background: transparent;
+	padding: 1rem;
+	font-family: "Montserrat", sans-serif;
+	outline-color: #102082;
+	border-radius: 10px;
+	font-size: 0.8rem;
+	border: 1px solid #333333;
+}
+
 main {
 	margin-top: 150px;
 }

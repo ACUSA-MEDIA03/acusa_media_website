@@ -1,0 +1,20 @@
+.contact-container {
+	padding: 5rem 0;
+}
+
+.intro-section {
+	background-color: #ffffff;
+	color: #000000;
+	text-align: center;
+}
+
+.intro-section h4 {
+	color: #102082;
+	text-transform: uppercase;
+}
+
+.intro-section p {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 1rem;
+}

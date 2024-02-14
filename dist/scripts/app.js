@@ -549,6 +549,24 @@ async function openImageModal() {
 	};
 }
 
+// Open questions in FAQs
+async function openFAQ() {
+	// Grab all the questions
+	const questions = document.querySelectorAll(".question");
+
+	questions.forEach((question) => {
+		const btn = question.querySelector(".title");
+		btn.addEventListener("click", () => {
+			questions.forEach((item) => {
+				if (item !== question) {
+					item.classList.remove("show");
+				}
+			});
+			question.classList.toggle("show");
+		});
+	});
+}
+
 // Init on the DOM Load
 document.addEventListener("DOMContentLoaded", init);
 
@@ -584,6 +602,9 @@ function init() {
 			break;
 		case "/dist/gallery.html":
 			openImageModal();
+			break;
+		case "/dist/faq.html":
+			openFAQ();
 			break;
 	}
 }

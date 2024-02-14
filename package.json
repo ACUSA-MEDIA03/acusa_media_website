@@ -11,6 +11,7 @@
 	"author": "Tomiwa Adelae",
 	"license": "MIT",
 	"dependencies": {
+		"cloudinary": "^2.0.1",
 		"dotenv": "^16.4.4",
 		"express": "^4.18.2",
 		"express-async-handler": "^1.2.0",

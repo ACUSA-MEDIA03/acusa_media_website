@@ -140,7 +140,8 @@ form label {
 }
 
 form input,
-form textarea {
+form textarea,
+form select {
 	width: 100%;
 	background: transparent;
 	padding: 1rem;
@@ -149,6 +150,13 @@ form textarea {
 	border-radius: 10px;
 	font-size: 0.8rem;
 	border: 1px solid #333333;
+	-moz-appearance: none; /* Firefox */
+	-webkit-appearance: none; /* Safari and Chrome */
+	appearance: none;
+}
+
+form select option {
+	padding: 1rem;
 }
 
 main {
@@ -266,6 +274,7 @@ footer {
 
 .showcase-section .details h1 {
 	text-transform: uppercase;
+	text-align: center;
 }
 
 /* Cursor */

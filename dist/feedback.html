@@ -97,13 +97,14 @@
 
 				<!-- Form section -->
 				<section class="form">
-					<form class="feedback-form">
+					<form id="feedback-form" class="feedback-form">
 						<div>
 							<label for="name">Name</label>
 							<input
 								type="text"
 								id="name"
 								placeholder="Enter your name"
+								required
 							/>
 						</div>
 						<div>
@@ -112,11 +113,12 @@
 								type="email"
 								id="email"
 								placeholder="Enter your email address"
+								required
 							/>
 						</div>
 						<div class="select">
 							<label for="type">Feedback type</label>
-							<select name="type" id="type">
+							<select required name="type" id="feedback-type">
 								<option value="">Select feedback type</option>
 								<option value="suggestion">Suggestion</option>
 								<option value="comment">Comment</option>
@@ -133,6 +135,7 @@
 								placeholder="Enter your message"
 								cols="30"
 								rows="10"
+								required
 							></textarea>
 						</div>
 						<div>

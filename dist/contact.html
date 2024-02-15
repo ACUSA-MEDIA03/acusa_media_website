@@ -94,13 +94,14 @@
 
 				<!-- Boxes section -->
 				<section class="boxes">
-					<form class="contact-form">
+					<form class="contact-form" id="contact-form">
 						<div>
 							<label for="name">Name</label>
 							<input
 								type="text"
 								id="name"
 								placeholder="Enter your name"
+								required
 							/>
 						</div>
 						<div>
@@ -108,6 +109,7 @@
 							<input
 								type="email"
 								id="email"
+								required
 								placeholder="Enter your email address"
 							/>
 						</div>
@@ -117,6 +119,7 @@
 								type="text"
 								id="message"
 								placeholder="Enter your message"
+								required
 								cols="30"
 								rows="10"
 							></textarea>

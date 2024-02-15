@@ -159,6 +159,13 @@ form select option {
 	padding: 1rem;
 }
 
+.notification {
+	background-color: #198754;
+	color: #ffffff;
+	padding: 1rem;
+	border-radius: 10px;
+}
+
 main {
 	margin-top: 150px;
 }

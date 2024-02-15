@@ -567,6 +567,99 @@ async function openFAQ() {
 	});
 }
 
+async function contactPage() {
+	sendContact();
+}
+
+const sendContact = async () => {
+	document
+		.querySelector("#contact-form")
+		.addEventListener("submit", async (e) => {
+			e.preventDefault();
+			try {
+				const name = document.querySelector("#name").value;
+				const email = document.querySelector("#email").value;
+				const message = document.querySelector("#message").value;
+
+				const newContact = { name, email, message };
+
+				const res = await fetch("http://localhost:5000/api/contact", {
+					method: "POST",
+					body: JSON.stringify(newContact),
+					headers: {
+						"Content-Type": "application/json",
+					},
+				});
+
+				await res.json();
+
+				// Clear the field
+				document.querySelector("#name").value = "";
+				document.querySelector("#email").value = "";
+				document.querySelector("#message").value = "";
+
+				// Send notification that the form has been filled successfully
+				const notificationDiv = document.createElement("div");
+				notificationDiv.classList.add("notification");
+				notificationDiv.innerHTML = "<h5>Successful!</h5>";
+
+				document
+					.querySelector("#contact-form")
+					.appendChild(notificationDiv);
+			} catch (err) {
+				console.log(err);
+			}
+		});
+};
+
+async function feedbackPage() {
+	sendFeedback();
+}
+
+const sendFeedback = async () => {
+	document
+		.querySelector("#feedback-form")
+		.addEventListener("submit", async (e) => {
+			e.preventDefault();
+			try {
+				const name = document.querySelector("#name").value;
+				const email = document.querySelector("#email").value;
+				const feedbackType =
+					document.querySelector("#feedback-type").value;
+				const message = document.querySelector("#message").value;
+
+				const newFeedback = { name, email, feedbackType, message };
+
+				const res = await fetch("http://localhost:5000/api/feedback", {
+					method: "POST",
+					body: JSON.stringify(newFeedback),
+					headers: {
+						"Content-Type": "application/json",
+					},
+				});
+
+				await res.json();
+
+				// Clear the field
+				document.querySelector("#name").value = "";
+				document.querySelector("#email").value = "";
+				document.querySelector("#feedback-type").value = "";
+				document.querySelector("#message").value = "";
+
+				// Send notification that the form has been filled successfully
+				const notificationDiv = document.createElement("div");
+				notificationDiv.classList.add("notification");
+				notificationDiv.innerHTML = "<h5>Successful!</h5>";
+
+				document
+					.querySelector("#feedback-form")
+					.appendChild(notificationDiv);
+			} catch (err) {
+				console.log(err);
+			}
+		});
+};
+
 // Init on the DOM Load
 document.addEventListener("DOMContentLoaded", init);
 
@@ -605,6 +698,12 @@ function init() {
 			break;
 		case "/dist/faq.html":
 			openFAQ();
+			break;
+		case "/dist/contact.html":
+			contactPage();
+			break;
+		case "/dist/feedback.html":
+			feedbackPage();
 			break;
 	}
 }

@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
 
-const articleSchema = new mongoose.Schema(
+const contactSchema = new mongoose.Schema(
 	{
-		title: {
+		name: {
 			type: String,
 			required: true,
 		},
-		post: {
-			type: Array,
+		email: {
+			type: String,
 			required: true,
 		},
-		imgURL: {
+		message: {
 			type: String,
 			required: true,
 		},
@@ -20,6 +20,6 @@ const articleSchema = new mongoose.Schema(
 	}
 );
 
-const Article = mongoose.model("Article", articleSchema);
+const Contact = mongoose.model("Contact", contactSchema);
 
-export default Article;
+export default Contact;

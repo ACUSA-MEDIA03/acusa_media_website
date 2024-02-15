@@ -13,6 +13,8 @@ import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 import contactRoute from "./routes/contactRoute.js";
 import feedbackRoute from "./routes/feedbackRoute.js";
 import articleRoute from "./routes/articleRoute.js";
+import newsRoute from "./routes/newsRoute.js";
+import archiveRoute from "./routes/archiveRoute.js";
 
 // Initialize express app
 const app = express();
@@ -32,6 +34,8 @@ connectDB();
 app.use("/api/contact", contactRoute);
 app.use("/api/feedback", feedbackRoute);
 app.use("/api/articles", articleRoute);
+app.use("/api/news", newsRoute);
+app.use("/api/archives", archiveRoute);
 
 app.get("/", (req, res) => {
 	res.send("API is up and running!!!");

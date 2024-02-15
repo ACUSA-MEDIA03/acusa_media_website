@@ -1,7 +1,5 @@
 import asyncHandler from "express-async-handler";
 import Article from "../models/articleModel.js";
-7;
-import moment from "moment";
 
 // @Desc Get all articles
 // @route GET /api/articles

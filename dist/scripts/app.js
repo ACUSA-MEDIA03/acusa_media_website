@@ -87,9 +87,9 @@ function typeWriter() {
 // Display the latest news
 async function displayLatestNews() {
 	// Get the news from the database
-	const res = await fetch("./data/news.json");
+	const res = await fetch(`${server}/api/news`);
 	const data = await res.json();
-	const latestNews = data.news[0];
+	const latestNews = data[0];
 
 	// Check for the length of the news post
 	const newsPost =
@@ -103,7 +103,7 @@ async function displayLatestNews() {
 	div.innerHTML = `
 					<div class="img">
 						<img
-							src="images/${latestNews.imgURL}"
+							src="${latestNews.news_image}"
 							alt="${latestNews.title}"
 						/>
 					</div>
@@ -113,7 +113,7 @@ async function displayLatestNews() {
 						<p>
 							${newsPost}
 						</p>
-						<a class="btn btn-black" href="news-details.html?id=${latestNews.id}"
+						<a class="btn btn-black" href="news-details.html?id=${latestNews._id}"
 							>Continue reading</a
 						>
 					</div>
@@ -126,25 +126,24 @@ async function displayLatestNews() {
 // Display all news
 async function displayAllNews() {
 	// Get all the news from the database
-	const res = await fetch("./data/news.json");
+	const res = await fetch(`${server}/api/news`);
 	const data = await res.json();
-	const allNews = data.news;
 
 	// Loop through the news and display them one-by-one
-	allNews.slice(1).forEach((news) => {
+	data.slice(1).forEach((news) => {
 		const div = document.createElement("div");
 		div.classList.add("box");
 		div.innerHTML = `
 						<div class="img">
 							<img
-								src="./images/${news.imgURL}"
+								src="${news.news_image}"
 								alt="${news.title}"
 							/>
 						</div>
 						<div class="details">
 							<h5>${news.title}</h5>
 							<h6>${news.date}</h6>
-							<a class="btn btn-black"href="news-details.html?id=${news.id}"
+							<a class="btn btn-black"href="news-details.html?id=${news._id}"
 								>Continue reading</a
 							>
 						</div>
@@ -158,9 +157,9 @@ async function displayAllNews() {
 // Display the top 3 news for the home page
 async function displayTopThreeNews() {
 	// Get all the news from the database
-	const res = await fetch("./data/news.json");
+	const res = await fetch(`${server}/api/news`);
 	const data = await res.json();
-	const topThreeNews = data.news.slice(0, 3);
+	const topThreeNews = data.slice(0, 3);
 
 	// Loop through the news and display them one-by-one
 	topThreeNews.forEach((news) => {
@@ -169,14 +168,14 @@ async function displayTopThreeNews() {
 		div.innerHTML = `
 						<div class="img">
 							<img
-								src="./images/${news.imgURL}"
+								src="${news.news_image}"
 								alt="${news.title}"
 							/>
 						</div>
 						<div class="details">
 							<h5>${news.title}</h5>
 							<h6>${news.date}</h6>
-							<a class="btn btn-black"href="news-details.html?id=${news.id}"
+							<a class="btn btn-black"href="news-details.html?id=${news._id}"
 								>Continue reading</a
 							>
 						</div>
@@ -193,35 +192,29 @@ async function displayNewsDetails() {
 	const newsId = window.location.search.split("=")[1];
 
 	// Get the news from the database
-	const res = await fetch("./data/news.json");
+	const res = await fetch(`${server}/api/news/${newsId}`);
 	const data = await res.json();
-	const news = data.news;
-
-	// Get the news that correlates with the specific ID
-	const newsDetails = news.filter((res) => {
-		return res.id == newsId;
-	});
 
 	// Create a news detail
 	const div = document.createElement("div");
 	div.classList.add("details");
 	div.innerHTML = `
 					<div class="head">
-						<h4>${newsDetails[0].title}</h4>
-						<h5>Posted on ${newsDetails[0].date}</h5>
+						<h4>${data.title}</h4>
+						<h5>Posted on ${data.date}</h5>
 					</div>
 					`;
 
 	// Insert the news image to the showcase section
 	const img = document.createElement("img");
-	img.src = `images/${newsDetails[0].imgURL}`;
-	img.alt = newsDetails[0].title;
+	img.src = `${data.news_image}`;
+	img.alt = data.title;
 
 	// Insert the news and showcase section
 	document.querySelector("#news-details").appendChild(div);
 	document.querySelector("#showcase-section").appendChild(img);
 
-	newsDetails[0].post.forEach((p) => {
+	data.post.forEach((p) => {
 		// Create paragraph for the article content
 		const contentDiv = document.createElement("div");
 		contentDiv.classList.add("content");
@@ -231,7 +224,7 @@ async function displayNewsDetails() {
 	});
 
 	// Change the title of the page
-	document.title = `${newsDetails[0].title} | ACUSA Media`;
+	document.title = `${data.title} | ACUSA Media`;
 }
 
 // Display the latest article
@@ -407,9 +400,9 @@ async function displayArticleDetails() {
 // Display the latest archive
 async function displayLatestArchive() {
 	// Get the archives from the database
-	const res = await fetch("./data/archives.json");
+	const res = await fetch(`${server}/api/archives`);
 	const data = await res.json();
-	const latestArchive = data.archives[0];
+	const latestArchive = data[0];
 
 	// Check for the length of the archive post
 	const archivePost =
@@ -424,9 +417,9 @@ async function displayLatestArchive() {
 					<div class="serial-number">
 						<img
 							src="./images/archives.jpg"
-							alt="${latestArchive.serialNumber}"
+							alt="${latestArchive.serial_number}"
 						/>
-						<h4>${latestArchive.serialNumber}</h4>
+						<h4>${latestArchive.serial_number}</h4>
 					</div>
 					<div class="archive-details">
 						<h5>${latestArchive.title}</h5>
@@ -434,7 +427,7 @@ async function displayLatestArchive() {
 						<p>
 							${archivePost}
 						</p>
-						<a class="btn btn-black" href="archive-details.html?id=${latestArchive.id}"
+						<a class="btn btn-black" href="archive-details.html?id=${latestArchive._id}"
 							>Continue reading</a
 						>
 					</div>
@@ -447,12 +440,11 @@ async function displayLatestArchive() {
 // Display all archives
 async function displayAllArchives() {
 	// Get all the archives from the database
-	const res = await fetch("./data/archives.json");
+	const res = await fetch(`${server}/api/archives`);
 	const data = await res.json();
-	const allArchives = data.archives;
 
 	// Loop through the news and display them one-by-one
-	allArchives.slice(1).forEach((archive) => {
+	data.slice(1).forEach((archive) => {
 		const div = document.createElement("div");
 		div.classList.add("box");
 
@@ -460,15 +452,15 @@ async function displayAllArchives() {
 						<div class="serial-number">
 							<img
 								src="./images/archives.jpg"
-								alt="${archive.serialNumber}"
+								alt="${archive.serial_number}"
 							/>
 							<div class='background-fill'></div>
-							<h4>${archive.serialNumber}</h4>
+							<h4>${archive.serial_number}</h4>
 						</div>
 						<div class="details">
 							<h5>${archive.title}</h5>
 							<h6>${archive.date}</h6>
-							<a class="btn btn-black"href="archive-details.html?id=${archive.id}"
+							<a class="btn btn-black"href="archive-details.html?id=${archive._id}"
 								>Continue reading</a
 							>
 						</div>
@@ -485,34 +477,28 @@ async function displayArchiveDetails() {
 	const archiveId = window.location.search.split("=")[1];
 
 	// Get the news from the database
-	const res = await fetch("./data/archives.json");
+	const res = await fetch(`${server}/api/archives/${archiveId}`);
 	const data = await res.json();
-	const archives = data.archives;
-
-	// Get the archive that correlates with the specific ID
-	const archiveDetails = archives.filter((res) => {
-		return res.id == archiveId;
-	});
 
 	// Create a news detail
 	const div = document.createElement("div");
 	div.classList.add("details");
 	div.innerHTML = `
 					<div class="head">
-						<h4>${archiveDetails[0].title}</h4>
-						<h5>Posted on ${archiveDetails[0].date}</h5>
+						<h4>${data.title}</h4>
+						<h5>Posted on ${data.date}</h5>
 					</div>
 					`;
 
 	// Insert the archive serial number to the showcase section
 	const h1 = document.createElement("h1");
-	h1.innerText = archiveDetails[0].serialNumber;
+	h1.innerText = data.serial_number;
 
 	// Insert the news and showcase section
 	document.querySelector("#archive-details").appendChild(div);
 	document.querySelector("#showcase-section").appendChild(h1);
 
-	archiveDetails[0].post.forEach((p) => {
+	data.post.forEach((p) => {
 		// Create paragraph for the archive content
 		const contentDiv = document.createElement("div");
 		contentDiv.classList.add("content");
@@ -522,7 +508,7 @@ async function displayArchiveDetails() {
 	});
 
 	// Change the title of the page
-	document.title = `${archiveDetails[0].title} | ACUSA Media`;
+	document.title = `${data.title} | ACUSA Media`;
 }
 
 // Display the archive details

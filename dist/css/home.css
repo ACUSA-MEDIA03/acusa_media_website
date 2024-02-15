@@ -27,22 +27,13 @@
 	height: 70vh;
 }
 
-.common-room-section .container {
-	width: 100%;
+.common-room-section .box {
 	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-}
-
-.common-room-section .container .box {
+	top: 50%;
+	left: 10%;
+	transform: translate(-10%, -50%);
 	background-color: #333333;
 	padding: 4rem;
-	width: 50%;
 	text-align: center;
 	color: #ffffff;
 }

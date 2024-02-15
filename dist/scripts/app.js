@@ -511,46 +511,6 @@ async function displayArchiveDetails() {
 	document.title = `${data.title} | ACUSA Media`;
 }
 
-// Display the archive details
-async function openImageModal() {
-	// Grab the images
-	const images = document.querySelectorAll(".photo img");
-
-	// Open the image that was clicked on
-	images.forEach((image) => {
-		image.onclick = () => {
-			document.querySelector("#image-modal").style.display = "flex";
-			document.querySelector("main").style.filter = blur("20px");
-			document.querySelector("#image-modal img").src =
-				image.getAttribute("src");
-			document.querySelector("#image-modal img").alt =
-				image.getAttribute("alt");
-		};
-	});
-
-	// Close the modal with the icon
-	document.querySelector(".fa-times").onclick = () =>
-		(document.querySelector("#image-modal").style.display = "none");
-
-	// Also close the modal with the escape key
-	const keyDownHandler = (e) => {
-		if (e.key === "Escape") {
-			e.preventDefault();
-
-			// 👇️ Close the modal
-			document.querySelector("#image-modal").style.display = "none";
-		}
-	};
-
-	// Call the function
-	document.addEventListener("keydown", keyDownHandler);
-
-	// 👇️ clean up event listener
-	return () => {
-		document.removeEventListener("keydown", keyDownHandler);
-	};
-}
-
 // Open questions in FAQs
 async function openFAQ() {
 	// Grab all the questions
@@ -662,6 +622,7 @@ const sendFeedback = async () => {
 		});
 };
 
+// Get photos from Database for the gallery page
 async function getPhotos() {
 	// Get all the photos from the database
 	const res = await fetch(`${server}/api/gallery`);
@@ -678,6 +639,35 @@ async function getPhotos() {
 
 		// Insert the new archive into the HTML page
 		document.querySelector("#photos").appendChild(div);
+
+		div.addEventListener("click", () => {
+			document.querySelector("#image-modal").style.display = "flex";
+			document.querySelector("main").style.filter = blur("20px");
+			document.querySelector("#image-modal img").src = photo.secure_url;
+			document.querySelector("#image-modal img").alt = photo.public_id;
+		});
+
+		// Close the modal with the icon
+		document.querySelector(".fa-times").onclick = () =>
+			(document.querySelector("#image-modal").style.display = "none");
+
+		// Also close the modal with the escape key
+		const keyDownHandler = (e) => {
+			if (e.key === "Escape") {
+				e.preventDefault();
+
+				// 👇️ Close the modal
+				document.querySelector("#image-modal").style.display = "none";
+			}
+		};
+
+		// Call the function
+		document.addEventListener("keydown", keyDownHandler);
+
+		// 👇️ clean up event listener
+		return () => {
+			document.removeEventListener("keydown", keyDownHandler);
+		};
 	});
 }
 
@@ -716,7 +706,6 @@ function init() {
 			break;
 		case "/dist/gallery.html":
 			getPhotos();
-			openImageModal();
 			break;
 		case "/dist/faq.html":
 			openFAQ();

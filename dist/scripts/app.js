@@ -384,6 +384,26 @@ async function displayArticleDetails() {
 		document.querySelector("#article-details").appendChild(contentDiv);
 	});
 
+	// Insert the writer's details
+	const writerDiv = document.createElement("div");
+	writerDiv.classList.add("article-writer");
+	writerDiv.innerHTML = `
+						<img src="./images/${articleDetails[0].writer_image}" alt="${articleDetails[0].writer_name}" />
+						<h5>Written by ${articleDetails[0].writer_name}</h5>
+						<div class="contact-details">
+							<a href="" class="btn twitter">
+								<i class="fa-brands fa-twitter"></i> ${articleDetails[0].twitter_handle}
+							</a>
+							<a href="" class="btn instagram">
+								<i class="fa-brands fa-instagram"></i> ${articleDetails[0].instagram_handle}
+							</a>
+							<a href="tel:" class="btn whatsapp">
+								<i class="fa-brands fa-whatsapp"></i> ${articleDetails[0].phone_number}
+							</a>
+						</div>
+						`;
+
+	document.querySelector("#article-details").appendChild(writerDiv);
 	// Change the title of the page
 	document.title = `${articleDetails[0].title} | ACUSA Media`;
 }

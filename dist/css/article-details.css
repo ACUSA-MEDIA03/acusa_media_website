@@ -19,3 +19,58 @@
 .content p:first-child {
 	margin-bottom: 2rem;
 }
+
+.article-writer {
+	margin-top: 4rem;
+}
+
+.article-writer h5 {
+	margin-top: 1rem;
+}
+
+.article-writer img {
+	width: 150px;
+	height: 150px;
+	border-radius: 100%;
+}
+
+.contact-details {
+	/* margin: 1rem 0 4rem 0; */
+	margin-top: 1rem;
+	display: flex;
+	gap: 1rem;
+}
+
+.contact-details i {
+	font-size: 1.2rem;
+}
+
+.contact-details a {
+}
+
+.btn.twitter {
+	border: 2px solid #1e9beb;
+}
+
+.btn.twitter:hover {
+	background-color: #1e9beb;
+	color: #ffffff;
+}
+
+.btn.instagram {
+	border: 2px solid #bf2e8e;
+}
+
+.btn.instagram:hover {
+	background-color: #bf2e8e;
+	color: #ffffff;
+}
+
+.btn.whatsapp {
+	border: 2px solid #2acb45;
+}
+
+.btn.whatsapp:hover {
+	background-color: #2acb45;
+	color: #ffffff;
+}

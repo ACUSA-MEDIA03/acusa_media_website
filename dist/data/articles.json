@@ -1,10 +1,35 @@
 {
 	"articles": [
 		{
+			"id": "23456010sdfghytr",
+			"title": "The Power of Volunteering: Building Stronger Communities Through Service",
+			"date": "January 28, 2024",
+			"imgURL": "./power.jpg",
+			"writer_name": "Divine Favour",
+			"phone_number": "07038803038",
+			"twitter_handle": "@divinefavour",
+			"instagram_handle": "divinefavour",
+			"writer_image": "./chidi.png",
+			"post": [
+				"In a world often characterized by individualism and self-preservation, the act of volunteering stands as a beacon of hope and unity. It is a powerful force that transcends boundaries, bridges gaps, and strengthens the fabric of communities. Whether it's lending a helping hand at a local shelter, participating in environmental clean-up efforts, or tutoring disadvantaged youth, volunteering plays a pivotal role in fostering social cohesion and driving positive change.",
+				"One of the most remarkable aspects of volunteering is its ability to create meaningful connections between people from diverse backgrounds. Regardless of age, gender, ethnicity, or socioeconomic status, volunteers come together with a shared purpose: to make a difference in the lives of others. These interactions not only break down barriers but also cultivate empathy, understanding, and mutual respect. Through collaborative efforts, volunteers develop a sense of belonging and camaraderie that transcends individual interests and fosters a sense of community.",
+				"Moreover, volunteering has a profound impact on the well-being of both volunteers and those they serve. Numerous studies have shown that engaging in acts of altruism can lead to improved mental and physical health. The sense of fulfillment derived from helping others boosts self-esteem and reduces stress levels. Additionally, volunteering provides opportunities for skill development, career exploration, and personal growth. Whether it's developing leadership abilities, refining communication skills, or gaining hands-on experience in a particular field, volunteers acquire invaluable knowledge and expertise that enrich their lives.",
+				"Furthermore, volunteering is a catalyst for positive social change. By addressing pressing issues such as poverty, homelessness, education inequality, and environmental degradation, volunteers contribute to building more equitable and sustainable societies. Their efforts not only alleviate immediate hardships but also lay the groundwork for long-term solutions. Through advocacy, community organizing, and grassroots initiatives, volunteers amplify the voices of marginalized populations and challenge systemic injustices. In doing so, they inspire others to take action and become agents of change in their own right.",
+				"In today's interconnected world, the need for volunteers has never been greater. As communities grapple with unprecedented challenges, from the COVID-19 pandemic to climate change, the spirit of volunteerism offers a ray of hope. It is a powerful reminder that, despite our differences, we are united by our common humanity and shared responsibility towards one another and the planet.",
+				"To harness the full potential of volunteering, it is essential to foster a culture of service and create supportive environments that encourage participation. This includes providing resources, training, and recognition for volunteers, as well as promoting collaboration between government agencies, nonprofit organizations, businesses, and educational institutions. By working together, we can unlock the transformative power of volunteering and build a more inclusive, compassionate, and resilient world for future generations.",
+				"In conclusion, volunteering is not just about giving back; it's about building bridges, nurturing compassion, and creating positive change. Each act of service, no matter how small, contributes to a larger tapestry of kindness and solidarity. As we embark on this collective journey towards a better tomorrow, let us remember the words of Mahatma Gandhi: The best way to find yourself is to lose yourself in the service of others."
+			]
+		},
+		{
 			"id": 1029348474,
 			"title": "The Art of Mindful Living: Cultivating Presence in a Fast-Paced World",
 			"date": "January 28, 2024",
 			"imgURL": "./fast-pace.jpg",
+			"writer_name": "Divine Favour",
+			"phone_number": "07038803038",
+			"twitter_handle": "@divinefavour",
+			"instagram_handle": "divinefavour",
+			"writer_image": "./chidi.png",
 			"post": [
 				"In the hustle and bustle of modern life, it's easy to get swept away by the constant demands, deadlines, and distractions. Amidst the chaos, the concept of mindful living has emerged as a beacon of tranquility, offering individuals a pathway to cultivate presence, peace, and a deeper connection with the world around them. In this article, we'll explore the art of mindful living and how incorporating mindfulness into daily routines can lead to a more fulfilling and harmonious existence.",
 				"Mindful living is a state of heightened awareness and conscious presence in each moment. Rooted in ancient contemplative practices, mindfulness has gained popularity in contemporary society as a practical tool to navigate stress, improve mental well-being, and foster a more profound sense of gratitude.",
@@ -19,6 +44,11 @@
 			"title": "Navigating University Life: A Guide to Surviving Ajayi Crowther University",
 			"date": "December 16, 2023",
 			"imgURL": "./survive.jpg",
+			"writer_name": "Divine Favour",
+			"phone_number": "07038803038",
+			"twitter_handle": "@divinefavour",
+			"instagram_handle": "divinefavour",
+			"writer_image": "./chidi.png",
 			"post": [
 				"Embarking on a university journey is an exciting yet challenging phase in a student's life. For those enrolled in Ajayi Crowther University, a private institution in Nigeria, the experience is unique and requires a blend of academic prowess, social adaptability, and personal resilience. In this article, we'll explore valuable tips on how to survive and thrive in the vibrant environment of Ajayi Crowther University.",
 				"Before diving into the academic and social aspects, take time to understand the university's culture. Ajayi Crowther University, being a faith-based institution, has its own set of values and norms. Familiarize yourself with the university's mission, vision, and code of conduct to ensure you align with its principles.",
@@ -33,6 +63,11 @@
 			"title": "Unveiling the Secrets to Academic Success: A Comprehensive Guide for Students",
 			"date": "January 19, 2024",
 			"imgURL": "./1st-semester-exam.jpg",
+			"writer_name": "Divine Favour",
+			"phone_number": "07038803038",
+			"twitter_handle": "@divinefavour",
+			"instagram_handle": "divinefavour",
+			"writer_image": "./chidi.png",
 			"post": [
 				"Academic success is not merely about memorizing facts and acing exams; it's a holistic journey that involves effective learning strategies, discipline, and a commitment to continuous improvement. In this article, we'll explore key principles and practical tips to help students achieve academic excellence and thrive in their educational pursuits.",
 				"Define your academic goals early on. Whether it's earning a specific GPA, mastering a particular subject, or gaining admission to a competitive program, having clear objectives will provide direction and motivation throughout your academic journey.",
@@ -48,6 +83,11 @@
 			"title": "Mastering Financial Intelligence: A Roadmap to Smart Money Management",
 			"date": "January 21, 2024",
 			"imgURL": "./the-end.jpg",
+			"writer_name": "Divine Favour",
+			"phone_number": "07038803038",
+			"twitter_handle": "@divinefavour",
+			"instagram_handle": "divinefavour",
+			"writer_image": "./chidi.png",
 			"post": [
 				"Academic success is not merely about memorizing facts and acing exams; it's a holistic journey that involves effective learning strategies, discipline, and a commitment to continuous improvement. In this article, we'll explore key principles and practical tips to help students achieve academic excellence and thrive in their educational pursuits.",
 				"Define your academic goals early on. Whether it's earning a specific GPA, mastering a particular subject, or gaining admission to a competitive program, having clear objectives will provide direction and motivation throughout your academic journey.",
@@ -63,6 +103,11 @@
 			"title": "Course registration closes on the 15th of January, 2024",
 			"date": "January 6, 2024",
 			"imgURL": "./alarm-clock.jpg",
+			"writer_name": "Divine Favour",
+			"phone_number": "07038803038",
+			"twitter_handle": "@divinefavour",
+			"instagram_handle": "divinefavour",
+			"writer_image": "./chidi.png",
 			"post": [
 				"Academic success is not merely about memorizing facts and acing exams; it's a holistic journey that involves effective learning strategies, discipline, and a commitment to continuous improvement. In this article, we'll explore key principles and practical tips to help students achieve academic excellence and thrive in their educational pursuits.",
 				"Define your academic goals early on. Whether it's earning a specific GPA, mastering a particular subject, or gaining admission to a competitive program, having clear objectives will provide direction and motivation throughout your academic journey.",
@@ -78,6 +123,11 @@
 			"title": "First semester exams starts on the 1st of Feburary, 2024",
 			"date": "January 19, 2024",
 			"imgURL": "./1st-semester-exam.jpg",
+			"writer_name": "Divine Favour",
+			"phone_number": "07038803038",
+			"twitter_handle": "@divinefavour",
+			"instagram_handle": "divinefavour",
+			"writer_image": "./chidi.png",
 			"post": [
 				"Academic success is not merely about memorizing facts and acing exams; it's a holistic journey that involves effective learning strategies, discipline, and a commitment to continuous improvement. In this article, we'll explore key principles and practical tips to help students achieve academic excellence and thrive in their educational pursuits.",
 				"Define your academic goals early on. Whether it's earning a specific GPA, mastering a particular subject, or gaining admission to a competitive program, having clear objectives will provide direction and motivation throughout your academic journey.",
@@ -93,6 +143,11 @@
 			"title": "1st semester ends on the 16th of February, 2024",
 			"date": "January 21, 2024",
 			"imgURL": "./the-end.jpg",
+			"writer_name": "Divine Favour",
+			"phone_number": "07038803038",
+			"twitter_handle": "@divinefavour",
+			"instagram_handle": "divinefavour",
+			"writer_image": "./chidi.png",
 			"post": [
 				"Academic success is not merely about memorizing facts and acing exams; it's a holistic journey that involves effective learning strategies, discipline, and a commitment to continuous improvement. In this article, we'll explore key principles and practical tips to help students achieve academic excellence and thrive in their educational pursuits.",
 				"Define your academic goals early on. Whether it's earning a specific GPA, mastering a particular subject, or gaining admission to a competitive program, having clear objectives will provide direction and motivation throughout your academic journey.",

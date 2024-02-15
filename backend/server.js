@@ -15,6 +15,7 @@ import feedbackRoute from "./routes/feedbackRoute.js";
 import articleRoute from "./routes/articleRoute.js";
 import newsRoute from "./routes/newsRoute.js";
 import archiveRoute from "./routes/archiveRoute.js";
+import galleryRoute from "./routes/gallyerRoute.js";
 
 // Initialize express app
 const app = express();
@@ -36,6 +37,7 @@ app.use("/api/feedback", feedbackRoute);
 app.use("/api/articles", articleRoute);
 app.use("/api/news", newsRoute);
 app.use("/api/archives", archiveRoute);
+app.use("/api/gallery", galleryRoute);
 
 app.get("/", (req, res) => {
 	res.send("API is up and running!!!");

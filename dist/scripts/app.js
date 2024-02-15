@@ -662,6 +662,25 @@ const sendFeedback = async () => {
 		});
 };
 
+async function getPhotos() {
+	// Get all the photos from the database
+	const res = await fetch(`${server}/api/gallery`);
+	const data = await res.json();
+
+	// Loop through the photos and display them one-by-one
+	data.slice(1).forEach((photo) => {
+		const div = document.createElement("div");
+		div.classList.add("photo");
+
+		div.innerHTML = `
+		<img src="${photo.secure_url}" alt="${photo.public_id}" />
+					`;
+
+		// Insert the new archive into the HTML page
+		document.querySelector("#photos").appendChild(div);
+	});
+}
+
 // Init on the DOM Load
 document.addEventListener("DOMContentLoaded", init);
 
@@ -696,6 +715,7 @@ function init() {
 			displayArchiveDetails();
 			break;
 		case "/dist/gallery.html":
+			getPhotos();
 			openImageModal();
 			break;
 		case "/dist/faq.html":

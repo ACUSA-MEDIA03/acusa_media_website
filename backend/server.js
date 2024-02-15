@@ -12,6 +12,7 @@ import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 // Importing the routes
 import contactRoute from "./routes/contactRoute.js";
 import feedbackRoute from "./routes/feedbackRoute.js";
+import articleRoute from "./routes/articleRoute.js";
 
 // Initialize express app
 const app = express();
@@ -30,6 +31,7 @@ connectDB();
 
 app.use("/api/contact", contactRoute);
 app.use("/api/feedback", feedbackRoute);
+app.use("/api/articles", articleRoute);
 
 app.get("/", (req, res) => {
 	res.send("API is up and running!!!");

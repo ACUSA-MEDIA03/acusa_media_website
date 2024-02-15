@@ -1,3 +1,6 @@
+// Server
+const server = "http://localhost:5000";
+
 // Selectors
 const nav = document.querySelector(".links");
 const hamburgerMenu = document.querySelector(".burger");
@@ -234,9 +237,9 @@ async function displayNewsDetails() {
 // Display the latest article
 async function displayLatestArticle() {
 	// Get the articles from the database
-	const res = await fetch("./data/articles.json");
+	const res = await fetch(`${server}/api/articles`);
 	const data = await res.json();
-	const latestArticle = data.articles[0];
+	const latestArticle = data[0];
 
 	// Check for the length of the news post
 	const articlePost =
@@ -250,7 +253,7 @@ async function displayLatestArticle() {
 	div.innerHTML = `
 					<div class="img">
 						<img
-							src="images/${latestArticle.imgURL}"
+							src="${latestArticle.article_image}"
 							alt="${latestArticle.title}"
 						/>
 					</div>
@@ -260,7 +263,7 @@ async function displayLatestArticle() {
 						<p>
 							${articlePost}
 						</p>
-						<a class="btn btn-black" href="article-details.html?id=${latestArticle.id}"
+						<a class="btn btn-black" href="article-details.html?id=${latestArticle._id}"
 							>Continue reading</a
 						>
 					</div>
@@ -273,9 +276,9 @@ async function displayLatestArticle() {
 // Display the article for the week
 async function displayArticleForTheWeek() {
 	// Get the articles from the database
-	const res = await fetch("./data/articles.json");
+	const res = await fetch(`${server}/api/articles`);
 	const data = await res.json();
-	const articleForTheWeek = data.articles[0];
+	const articleForTheWeek = data[0];
 
 	// Check for the length of the news post
 	const articlePost =
@@ -293,12 +296,12 @@ async function displayArticleForTheWeek() {
 						<p>
 							${articlePost}
 						</p>
-						<a class="btn btn-black" href="article-details.html?id=${articleForTheWeek.id}"
+						<a class="btn btn-black" href="article-details.html?id=${articleForTheWeek._id}"
 							>Continue reading</a
 						>
 					</div>
 					<img
-						src="./images/${articleForTheWeek.imgURL}"
+						src="${articleForTheWeek.article_image}"
 						alt="${articleForTheWeek.title}"
 					/>
 	`;
@@ -310,9 +313,9 @@ async function displayArticleForTheWeek() {
 // Display all articles
 async function displayAllArticles() {
 	// Get all the articles from the database
-	const res = await fetch("./data/articles.json");
+	const res = await fetch(`${server}/api/articles`);
 	const data = await res.json();
-	const allArticles = data.articles;
+	const allArticles = data;
 
 	// Loop through the news and display them one-by-one
 	allArticles.slice(1).forEach((article) => {
@@ -322,14 +325,14 @@ async function displayAllArticles() {
 		div.innerHTML = `
 						<div class="img">
 							<img
-								src="./images/${article.imgURL}"
+								src="${article.article_image}"
 								alt="${article.title}"
 							/>
 						</div>
 						<div class="details">
 							<h5>${article.title}</h5>
 							<h6>${article.date}</h6>
-							<a class="btn btn-black"href="article-details.html?id=${article.id}"
+							<a class="btn btn-black"href="article-details.html?id=${article._id}"
 								>Continue reading</a
 							>
 						</div>
@@ -346,36 +349,29 @@ async function displayArticleDetails() {
 	const articleId = window.location.search.split("=")[1];
 
 	// Get the news from the database
-	const res = await fetch("./data/articles.json");
-	// const res = await fetch("./data/test.json");
+	const res = await fetch(`${server}/api/articles/${articleId}`);
 	const data = await res.json();
-	const articles = data.articles;
-
-	// Get the article that correlates with the specific ID
-	const articleDetails = articles.filter((res) => {
-		return res.id == articleId;
-	});
 
 	// Create a news detail
 	const div = document.createElement("div");
 	div.classList.add("details");
 	div.innerHTML = `
 					<div class="head">
-						<h4>${articleDetails[0].title}</h4>
-						<h5>Posted on ${articleDetails[0].date}</h5>
+						<h4>${data.title}</h4>
+						<h5>Posted on ${data.date}</h5>
 					</div>
 					`;
 
 	// Insert the news image to the showcase section
 	const img = document.createElement("img");
-	img.src = `images/${articleDetails[0].imgURL}`;
-	img.alt = articleDetails[0].title;
+	img.src = `${data.article_image}`;
+	img.alt = data.title;
 
 	// Insert the news and showcase section
 	document.querySelector("#article-details").appendChild(div);
 	document.querySelector("#showcase-section").appendChild(img);
 
-	articleDetails[0].post.forEach((p) => {
+	data.post.forEach((p) => {
 		// Create paragraph for the article content
 		const contentDiv = document.createElement("div");
 		contentDiv.classList.add("content");
@@ -388,24 +384,24 @@ async function displayArticleDetails() {
 	const writerDiv = document.createElement("div");
 	writerDiv.classList.add("article-writer");
 	writerDiv.innerHTML = `
-						<img src="./images/${articleDetails[0].writer_image}" alt="${articleDetails[0].writer_name}" />
-						<h5>Written by ${articleDetails[0].writer_name}</h5>
+						<img src="${data.writer_image}" alt="${data.writer_name}" />
+						<h5>Written by ${data.writer_name}</h5>
 						<div class="contact-details">
-							<a href="" class="btn twitter">
-								<i class="fa-brands fa-twitter"></i> ${articleDetails[0].twitter_handle}
+							<a target='_blank' href="https://twitter.com/${data.twitter_handle}" class="btn twitter">
+								<i class="fa-brands fa-twitter"></i> ${data.twitter_handle}
 							</a>
-							<a href="" class="btn instagram">
-								<i class="fa-brands fa-instagram"></i> ${articleDetails[0].instagram_handle}
+							<a target='_blank' href="https://www.instagram.com/${data.instagram_handle}" class="btn instagram">
+								<i class="fa-brands fa-instagram"></i> ${data.instagram_handle}
 							</a>
-							<a href="tel:" class="btn whatsapp">
-								<i class="fa-brands fa-whatsapp"></i> ${articleDetails[0].phone_number}
+							<a href="tel: ${data.phone_number}" class="btn whatsapp">
+								<i class="fa-brands fa-whatsapp"></i> ${data.phone_number}
 							</a>
 						</div>
 						`;
 
 	document.querySelector("#article-details").appendChild(writerDiv);
 	// Change the title of the page
-	document.title = `${articleDetails[0].title} | ACUSA Media`;
+	document.title = `${data.title} | ACUSA Media`;
 }
 
 // Display the latest archive
@@ -650,7 +646,7 @@ const sendFeedback = async () => {
 
 				const newFeedback = { name, email, feedbackType, message };
 
-				const res = await fetch("http://localhost:5000/api/feedback", {
+				const res = await fetch(`${server}/api/feedback`, {
 					method: "POST",
 					body: JSON.stringify(newFeedback),
 					headers: {

@@ -92,3 +92,25 @@
 	width: 100%;
 	text-align: center;
 }
+
+@media (max-width: 880px) {
+	.intro-section p {
+		width: 100%;
+	}
+
+	.latest-article-section .latest-article .img {
+		flex: 2;
+	}
+
+	.latest-article-section .latest-article .article-details {
+		flex: 3;
+	}
+
+	.all-articles-section .boxes .box .img {
+		height: 150px;
+	}
+
+	.all-articles-section .boxes .box .details {
+		padding: 1rem;
+	}
+}

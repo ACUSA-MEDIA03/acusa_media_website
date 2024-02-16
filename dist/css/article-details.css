@@ -45,9 +45,6 @@
 	font-size: 1.2rem;
 }
 
-.contact-details a {
-}
-
 .btn.twitter {
 	border: 2px solid #1e9beb;
 }
@@ -73,4 +70,11 @@
 .btn.whatsapp:hover {
 	background-color: #2acb45;
 	color: #ffffff;
+}
+
+@media (max-width: 880px) {
+	.article-writer img {
+		width: 120px;
+		height: 120px;
+	}
 }

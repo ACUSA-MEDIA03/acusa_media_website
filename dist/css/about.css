@@ -80,3 +80,13 @@ h4 {
 		width: 100%;
 	}
 }
+
+@media (max-width: 680px) {
+	.container .what-we-do-section .boxes {
+		grid-template-columns: 1fr;
+	}
+
+	.container .what-we-do-section .boxes .box .img {
+		height: 250px;
+	}
+}

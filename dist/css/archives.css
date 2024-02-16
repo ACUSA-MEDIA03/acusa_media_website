@@ -38,9 +38,9 @@
 }
 
 .latest-archive-section .latest-archive .serial-number {
+	width: 350px;
 	height: 350px;
 	position: relative;
-	flex: 1;
 }
 
 .latest-archive-section .latest-archive .serial-number img {
@@ -114,4 +114,37 @@
 	margin-top: 1.5rem;
 	width: 100%;
 	text-align: center;
+}
+
+@media (max-width: 880px) {
+	.intro-section p {
+		width: 100%;
+	}
+
+	.all-archives-section .boxes .box .details {
+		padding: 1rem;
+	}
+}
+
+@media (max-width: 680px) {
+	.latest-archive-section .latest-archive {
+		flex-direction: column;
+	}
+
+	.latest-archive-section .latest-archive .serial-number {
+		height: 250px;
+		width: 100%;
+	}
+
+	.latest-archive-section .latest-archive .archive-details .btn {
+		width: 100%;
+	}
+
+	.all-archives-section .boxes {
+		grid-template-columns: 1fr;
+	}
+
+	.all-archives-section .boxes .box .serial-number {
+		height: 250px;
+	}
 }

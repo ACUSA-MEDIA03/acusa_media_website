@@ -437,3 +437,61 @@ footer {
 		font-size: 1.5rem;
 	}
 }
+
+@media (max-width: 680px) {
+	/* FONT SIZES */
+	h1 {
+		font-size: 4rem;
+	}
+
+	h2 {
+		font-size: 3rem;
+	}
+
+	h3 {
+		font-size: 2rem;
+	}
+
+	h4 {
+		font-size: 1.2rem;
+	}
+
+	h5 {
+		font-size: 0.8rem;
+	}
+
+	/* BUTTONS */
+	.btn {
+		padding: 0.7rem 1rem;
+		font-size: 0.6rem;
+	}
+
+	.container {
+		width: 95%;
+	}
+
+	body {
+		font-size: 12px;
+	}
+
+	form label {
+		font-size: 0.7rem;
+	}
+
+	form input,
+	form textarea,
+	form select {
+		padding: 0.8rem;
+
+		font-size: 0.7rem;
+	}
+
+	form select option {
+		padding: 0.8rem;
+	}
+
+	/* SHOWCASE SECTION FOR ALL PAGES */
+	.showcase-section {
+		height: 55vh;
+	}
+}

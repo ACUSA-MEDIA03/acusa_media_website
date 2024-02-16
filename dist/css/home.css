@@ -60,7 +60,7 @@
 .article-for-week-section img {
 	width: 450px;
 	height: 400px;
-	flex: 1;
+	/* flex: 1; */
 }
 
 .article-content {
@@ -217,5 +217,60 @@
 
 	.latest-news-section .container .boxes .box .details {
 		padding: 1rem;
+	}
+}
+
+@media (max-width: 680px) {
+	.about-section .container {
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.about-section img {
+		width: 100%;
+		height: 300px;
+	}
+
+	.common-room-section {
+		height: 55vh;
+	}
+
+	.common-room-section .box {
+		padding: 3rem 2rem;
+	}
+
+	.article-for-week-section .container {
+		flex-direction: column-reverse;
+		gap: 3rem;
+	}
+
+	.article-for-week-section img {
+		width: 100%;
+		height: 300px;
+	}
+
+	.past-executives-section .container {
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.past-executives-section .imgs .img {
+		height: 180px;
+	}
+
+	.past-executives-section .imgs .img h6 {
+		font-size: 0.8rem;
+	}
+
+	.latest-news-section .container .boxes {
+		grid-template-columns: 1fr;
+	}
+
+	.latest-news-section .container .boxes .box .img {
+		height: 250px;
+	}
+
+	.latest-news-section .container .boxes .box .details {
+		padding: 2rem 1.5rem;
 	}
 }

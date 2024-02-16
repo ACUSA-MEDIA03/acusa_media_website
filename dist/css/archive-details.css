@@ -54,3 +54,27 @@
 .signature-section .box .tel a {
 	color: #d33131;
 }
+
+@media (max-width: 680px) {
+	.signature-section {
+		justify-content: space-around;
+	}
+
+	.signature-section .box h4 {
+		font-size: 1.1rem;
+	}
+
+	.signature-section .box h5 {
+		font-size: 0.7rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.signature-section .box h4 {
+		font-size: 0.9rem;
+	}
+
+	.signature-section .box h5 {
+		font-size: 0.6rem;
+	}
+}

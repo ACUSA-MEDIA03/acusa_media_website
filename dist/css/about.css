@@ -90,3 +90,13 @@ h4 {
 		height: 250px;
 	}
 }
+
+@media (max-width: 480px) {
+	.container .what-we-do-section .boxes {
+		grid-template-columns: 1fr;
+	}
+
+	.container .what-we-do-section .boxes .box .img {
+		height: 200px;
+	}
+}

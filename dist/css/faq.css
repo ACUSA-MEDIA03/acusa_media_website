@@ -73,3 +73,21 @@
 .show .plus-icon {
 	display: none;
 }
+
+@media (max-width: 880px) {
+	.intro-section p {
+		width: 100%;
+	}
+}
+
+@media (max-width: 680px) {
+	.faq-showcase h1 {
+		font-size: 3rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.faq-showcase h1 {
+		font-size: 1.7rem;
+	}
+}

@@ -46,3 +46,9 @@
 	margin: 4rem auto;
 	border-radius: 10px;
 }
+
+@media (max-width: 880px) {
+	.intro-section p {
+		width: 100%;
+	}
+}

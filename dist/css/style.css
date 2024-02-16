@@ -387,8 +387,9 @@ footer {
 	header .links ul li {
 		background-color: #e5e8eb;
 		margin: 0.5rem 0;
-		padding: 0.5rem;
+		padding: 0.6rem 1rem;
 		text-align: left;
+		border-radius: 10px;
 	}
 
 	header .links ul li a {
@@ -493,5 +494,41 @@ footer {
 	/* SHOWCASE SECTION FOR ALL PAGES */
 	.showcase-section {
 		height: 55vh;
+	}
+}
+
+@media (max-width: 480px) {
+	header .head .hamburger i {
+		font-size: 1.5rem;
+	}
+
+	/* FONT SIZES */
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1.7rem;
+	}
+
+	h4 {
+		font-size: 1rem;
+	}
+
+	h5 {
+		font-size: 0.7rem;
+	}
+
+	/* SHOWCASE SECTION FOR ALL PAGES */
+	.showcase-section {
+		height: 50vh;
+	}
+
+	body {
+		font-size: 11px;
 	}
 }

@@ -78,3 +78,28 @@
 		height: 120px;
 	}
 }
+
+@media (max-width: 680px) {
+	.article-writer img {
+		text-align: center;
+		width: 100px;
+		height: 100px;
+	}
+}
+
+@media (max-width: 480px) {
+	.article-writer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.contact-details {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.contact-details a {
+	}
+}

@@ -137,3 +137,13 @@
 		padding: 2rem 1.5rem;
 	}
 }
+
+@media (max-width: 480px) {
+	.latest-news-section .latest-news .img {
+		height: 200px;
+	}
+
+	.all-news-section .boxes .box .img {
+		height: 200px;
+	}
+}

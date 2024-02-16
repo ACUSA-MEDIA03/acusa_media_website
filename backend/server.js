@@ -39,13 +39,20 @@ app.use("/api/news", newsRoute);
 app.use("/api/archives", archiveRoute);
 app.use("/api/gallery", galleryRoute);
 
-app.get("/", (req, res) => {
-	res.send("API is up and running!!!");
-});
-
 // Error middleware
 app.use(notFound);
 app.use(errorHandler);
+
+// Set static folder
+if (process.env.NODE_ENV === "production") {
+	app.get("*", (req, res) =>
+		res.sendFile(path.resolve(__dirname, "dist", "index.html"))
+	);
+} else {
+	app.get("/", (req, res) => {
+		res.send("API is up and running!!!");
+	});
+}
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}...`));

@@ -74,3 +74,9 @@ h4 {
 .join-us-section p {
 	margin: 0.5rem 0;
 }
+
+@media (max-width: 880px) {
+	.intro-section p {
+		width: 100%;
+	}
+}

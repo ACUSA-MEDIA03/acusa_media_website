@@ -122,3 +122,13 @@ h4 {
 		-webkit-transform: scale(1);
 	}
 }
+
+@media (max-width: 880px) {
+	.intro-section p {
+		width: 100%;
+	}
+
+	.gallery-section .photos {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

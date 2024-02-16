@@ -221,7 +221,11 @@ header .links {
 	background-color: #ffffff;
 	border-top: 3px solid #102082;
 	padding: 1rem 0;
-	border-bottom: 3px solid #102082;
+	/* border-bottom: 3px solid #102082; */
+}
+
+header .links .container {
+	width: 95%;
 }
 
 header .links ul {
@@ -237,7 +241,7 @@ header .links ul li {
 
 header .links ul li a {
 	font-weight: bolder;
-	font-size: 12px;
+	font-size: 11px;
 	transition: all ease-out 0.5s;
 }
 
@@ -338,28 +342,31 @@ footer {
 
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 880px) {
+	body {
+		font-size: 13px;
+	}
+
 	main {
 		margin-top: 100px;
 	}
+
 	header {
-		/* background-color: #ffffff;
-		padding-top: 0.5rem; */
 		height: 100px;
 		border-bottom: 3px solid #102082;
 	}
+
 	header .head {
 		position: relative;
 	}
+
 	header .head .logo {
 		text-align: center;
 	}
-	/* header .head .logo img {
-		width: 100px;
-		height: 100px;
-	} */
+
 	header .head .hamburger {
 		display: block;
 	}
+
 	header .links {
 		position: fixed;
 		top: 100px;
@@ -369,25 +376,64 @@ footer {
 		height: 100vh;
 		background-color: #ffffff;
 		z-index: 3;
-		/* padding: 0 2rem; */
 		border-top: none;
-
 		transition: all ease-out 0.5s;
 	}
+
 	header .links ul {
 		display: block;
 	}
+
 	header .links ul li {
 		background-color: #e5e8eb;
 		margin: 0.5rem 0;
 		padding: 0.5rem;
 		text-align: left;
 	}
+
 	header .links ul li a {
 		width: 100%;
 		display: inline-block;
 	}
+
 	header .links-open {
 		left: 0;
+	}
+
+	/* FONT SIZES */
+	h1 {
+		font-size: 4.5rem;
+	}
+
+	h2 {
+		font-size: 3.5rem;
+	}
+
+	h3 {
+		font-size: 2.5rem;
+	}
+
+	h4 {
+		font-size: 1.5rem;
+	}
+
+	h5 {
+		font-size: 1rem;
+	}
+
+	/* BUTTONS */
+	.btn {
+		padding: 0.8rem 1.2rem;
+		font-size: 0.7rem;
+	}
+
+	/* CONNECT WITH US ON SOCIAL MEDIA */
+
+	.connent-social-media-section .container p {
+		width: 80%;
+	}
+
+	.connent-social-media-section .container .icons i {
+		font-size: 1.5rem;
 	}
 }

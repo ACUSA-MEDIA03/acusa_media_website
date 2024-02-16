@@ -40,7 +40,7 @@
 .latest-news-section .latest-news .img {
 	width: 350px;
 	height: 350px;
-	flex-direction: 1;
+	flex: 1;
 }
 
 .latest-news-section .latest-news .news-details {
@@ -92,4 +92,26 @@
 	margin-top: 1.5rem;
 	width: 100%;
 	text-align: center;
+}
+
+@media (max-width: 880px) {
+	.intro-section p {
+		width: 100%;
+	}
+
+	.latest-news-section .latest-news .img {
+		flex: 2;
+	}
+
+	.latest-news-section .latest-news .news-details {
+		flex: 3;
+	}
+
+	.all-news-section .boxes .box .img {
+		height: 150px;
+	}
+
+	.all-news-section .boxes .box .details {
+		padding: 1rem;
+	}
 }

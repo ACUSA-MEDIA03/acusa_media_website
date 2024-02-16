@@ -176,3 +176,46 @@
 .latest-news-section .container .more-news {
 	text-align: center;
 }
+
+@media (max-width: 880px) {
+	.about-section .container {
+		gap: 2rem;
+	}
+
+	.about-section img {
+		width: 250px;
+		height: 250px;
+	}
+
+	.about-section .about-content p {
+		margin: 1rem 0;
+	}
+
+	.article-for-week-section .container {
+		gap: 2rem;
+	}
+
+	.article-for-week-section img {
+		width: 250px;
+		height: 250px;
+	}
+
+	.past-executives-section .container {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 2rem;
+	}
+
+	.past-executives-section .imgs .img {
+		height: 120px;
+	}
+
+	.latest-news-section .container .boxes .box .img {
+		height: 150px;
+	}
+
+	.latest-news-section .container .boxes .box .details {
+		padding: 1rem;
+	}
+}

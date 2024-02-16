@@ -1,3 +1,5 @@
+import path from "path";
+
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -26,6 +28,9 @@ app.use(cors({ credentials: true }));
 // Express body parser
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true }));
+// 7;
+// const __dirname = path.resolve();
+// console.log(__dirname);
 
 // Connect MongoDB
 connectDB();
@@ -45,6 +50,7 @@ app.use(errorHandler);
 
 // Set static folder
 if (process.env.NODE_ENV === "production") {
+	const __dirname = path.resolve();
 	app.get("*", (req, res) => res.sendFile(path.resolve(__dirname, "dist")));
 } else {
 	app.get("/", (req, res) => {

@@ -193,6 +193,7 @@ header .head .logo {
 header .head .logo img {
 	width: 80px;
 	height: 80px;
+	border-radius: 100%;
 }
 
 header .head .hamburger {

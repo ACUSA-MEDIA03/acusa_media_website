@@ -45,16 +45,13 @@ app.use("/api/archives", archiveRoute);
 app.use("/api/gallery", galleryRoute);
 
 // Error middleware
-app.use(notFound);
+// app.use(notFound);
 app.use(errorHandler);
 
 // Set static folder
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV === "production") {
 	const __dirname = path.resolve();
-	// console.log(path.resolve(__dirname, "dist", "index.html"));
-	// app.get("/", (req, res) =>
-	// 	res.sendFile(path.resolve(__dirname, "dist", "index.html"))
-	// );
+
 	app.use(express.static(path.join(__dirname, "dist")));
 } else {
 	app.get("/", (req, res) => {

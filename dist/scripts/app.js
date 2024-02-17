@@ -1,5 +1,6 @@
 // Server
-const server = "http://localhost:5000";
+// const server = "http://localhost:5000";
+const server = "https://acusamediabackend.onrender.com";
 
 // Selectors
 const nav = document.querySelector(".links");

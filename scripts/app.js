@@ -679,42 +679,42 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
 	switch (window.location.pathname) {
 		case "/":
-		case "/dist/index.html":
+		case "/index.html":
 			typeWriter();
 			displayTopThreeNews();
 			displayArticleForTheWeek();
 			break;
-		case "/dist/news.html":
+		case "/news.html":
 			displayLatestNews();
 			displayAllNews();
 			break;
-		case "/dist/news-details.html":
+		case "/news-details.html":
 			displayNewsDetails();
 			break;
-		case "/dist/articles.html":
+		case "/articles.html":
 			displayLatestArticle();
 			displayAllArticles();
 			break;
-		case "/dist/article-details.html":
+		case "/article-details.html":
 			displayArticleDetails();
 			break;
-		case "/dist/archives.html":
+		case "/archives.html":
 			displayLatestArchive();
 			displayAllArchives();
 			break;
-		case "/dist/archive-details.html":
+		case "/archive-details.html":
 			displayArchiveDetails();
 			break;
-		case "/dist/gallery.html":
+		case "/gallery.html":
 			getPhotos();
 			break;
-		case "/dist/faq.html":
+		case "/faq.html":
 			openFAQ();
 			break;
-		case "/dist/contact.html":
+		case "/contact.html":
 			contactPage();
 			break;
-		case "/dist/feedback.html":
+		case "/feedback.html":
 			feedbackPage();
 			break;
 	}

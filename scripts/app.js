@@ -85,6 +85,37 @@ function typeWriter() {
 	new Typewriter(txtElement, words, wait);
 }
 
+// Display all news
+async function displayAllNews() {
+	// Get all the news from the database
+	const res = await fetch(`${server}/api/news`);
+	const data = await res.json();
+
+	// Loop through the news and display them one-by-one
+	data.slice(1).forEach((news) => {
+		const div = document.createElement("div");
+		div.classList.add("box");
+		div.innerHTML = `
+						<div class="img">
+							<img
+								src="${news.news_image}"
+								alt="${news.title}"
+							/>
+						</div>
+						<div class="details">
+							<h5>${news.title}</h5>
+							<h6>${news.date}</h6>
+							<a class="btn btn-black"href="news-details.html?id=${news._id}"
+								>Continue reading</a
+							>
+						</div>
+					`;
+
+		// Insert the new news into the HTML page
+		document.querySelector("#boxes").appendChild(div);
+	});
+}
+
 // Display the latest news
 async function displayLatestNews() {
 	// Get the news from the database
@@ -122,37 +153,6 @@ async function displayLatestNews() {
 
 	// Insert latest news section to the HTML page
 	document.querySelector("#latest-news-section").appendChild(div);
-}
-
-// Display all news
-async function displayAllNews() {
-	// Get all the news from the database
-	const res = await fetch(`${server}/api/news`);
-	const data = await res.json();
-
-	// Loop through the news and display them one-by-one
-	data.slice(1).forEach((news) => {
-		const div = document.createElement("div");
-		div.classList.add("box");
-		div.innerHTML = `
-						<div class="img">
-							<img
-								src="${news.news_image}"
-								alt="${news.title}"
-							/>
-						</div>
-						<div class="details">
-							<h5>${news.title}</h5>
-							<h6>${news.date}</h6>
-							<a class="btn btn-black"href="news-details.html?id=${news._id}"
-								>Continue reading</a
-							>
-						</div>
-					`;
-
-		// Insert the new news into the HTML page
-		document.querySelector("#boxes").appendChild(div);
-	});
 }
 
 // Display the top 3 news for the home page

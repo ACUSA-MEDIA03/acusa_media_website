@@ -1,0 +1,10 @@
+@media (max-width: 960px) {
+  .main_section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .audio_cards {
+    display: flex;
+    flex-direction: column;
+  }
+  
+}

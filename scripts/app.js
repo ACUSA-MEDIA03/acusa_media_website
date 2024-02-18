@@ -91,6 +91,8 @@ async function displayAllNews() {
 	const res = await fetch(`${server}/api/news`);
 	const data = await res.json();
 
+	console.log("ALL news");
+
 	// Loop through the news and display them one-by-one
 	data.slice(1).forEach((news) => {
 		const div = document.createElement("div");

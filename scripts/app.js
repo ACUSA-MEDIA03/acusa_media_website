@@ -623,6 +623,50 @@ const sendFeedback = async () => {
 		});
 };
 
+// Display all archives
+async function displayPodasts() {
+	// Get all the podcasts from the database
+	const res = await fetch(`${server}/api/podcasts`);
+	const data = await res.json();
+
+	console.log(data);
+
+	// Loop through the podcasts and display them one-by-one
+	data.forEach((podcast) => {
+		const div = document.createElement("div");
+		div.classList.add("audio_cards");
+
+		div.innerHTML = `
+						<div class="audio_img">
+							<img src="${podcast.podcast_image}" alt=${podcast.title} />
+						</div>
+						<div class="audio_content">
+							<h5 id="title">${podcast.title}</h5>
+							<h6>Episode 104</h6>
+							<br />
+							<p>
+							${
+								podcast.excerpt.length <= 200
+									? podcast.excerpt
+									: `${podcast.excerpt.substring(0, 200)}...`
+							}
+							</p>
+
+							<br />
+							<audio controls>
+								<source
+									src="${podcast.audio_source}"
+									type="audio/mp3"
+								/>
+							</audio>
+						</div>
+		`;
+
+		// Insert the new archive into the HTML page
+		document.querySelector("#podcasts").appendChild(div);
+	});
+}
+
 // Get photos from Database for the gallery page
 async function getPhotos() {
 	// Get all the photos from the database
@@ -716,6 +760,9 @@ function init() {
 			break;
 		case "/feedback.html":
 			feedbackPage();
+			break;
+		case "/podcasts.html":
+			displayPodasts();
 			break;
 	}
 }

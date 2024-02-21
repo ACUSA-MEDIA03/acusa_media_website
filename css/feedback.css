@@ -1,0 +1,54 @@
+.feedback-container {
+	padding: 5rem 0;
+}
+
+.intro-section {
+	background-color: #ffffff;
+	color: #000000;
+	text-align: center;
+}
+
+.intro-section h4 {
+	color: #102082;
+	text-transform: uppercase;
+}
+
+.intro-section p {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 1rem;
+}
+
+.form {
+	margin-top: 4rem;
+}
+
+.select {
+	position: relative;
+}
+
+.form i {
+	color: #102082;
+	position: absolute;
+	top: 55%;
+	right: 1%;
+	transform: translate(-55%, -1%);
+}
+
+.info-section h5 {
+	margin-bottom: 1rem;
+}
+
+.line {
+	background-color: #333333;
+	padding: 0.1rem 0;
+	width: 100%;
+	margin: 4rem auto;
+	border-radius: 10px;
+}
+
+@media (max-width: 880px) {
+	.intro-section p {
+		width: 100%;
+	}
+}

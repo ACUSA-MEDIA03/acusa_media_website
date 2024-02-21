@@ -1,0 +1,25 @@
+.news-details {
+	padding: 5rem 0;
+}
+
+.head {
+	text-align: center;
+}
+
+.head h4 {
+	text-transform: uppercase;
+	color: #102082;
+}
+
+.head h5 {
+	color: #333333;
+	margin: 1rem 0 3rem 0;
+}
+
+.content p:first-child {
+	margin-bottom: 2rem;
+}
+
+/* .spinner {
+	display: none;
+} */

@@ -41,8 +41,16 @@
 	gap: 1rem;
 }
 
+.contact-details .btn {
+	/* font-size: 0.7rem; */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
 .contact-details i {
 	font-size: 1.2rem;
+	margin-right: 0.5rem;
 }
 
 .btn.twitter {

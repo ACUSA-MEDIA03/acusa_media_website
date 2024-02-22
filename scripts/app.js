@@ -629,8 +629,6 @@ async function displayPodasts() {
 	const res = await fetch(`${server}/api/podcasts`);
 	const data = await res.json();
 
-	console.log(data);
-
 	// Loop through the podcasts and display them one-by-one
 	data.forEach((podcast) => {
 		const div = document.createElement("div");

@@ -36,6 +36,10 @@ body {
   font-family:'Times New Roman', Times, serif;
 }
 
+.profile a:hover{
+  color: #102082;
+}
+
 /* Float three columns side by side */
 .column {
   float: left;

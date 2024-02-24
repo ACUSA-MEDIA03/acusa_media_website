@@ -35,10 +35,6 @@
 	transition: all ease-out 0.5s;
 }
 
-.question:hover {
-	transform: scale(1.02);
-}
-
 .title {
 	display: flex;
 	flex-direction: row;

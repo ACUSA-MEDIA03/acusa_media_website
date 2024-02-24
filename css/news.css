@@ -33,10 +33,6 @@
 	overflow: hidden;
 }
 
-.latest-news-section .latest-news:hover {
-	transform: scale(1.02);
-}
-
 .latest-news-section .latest-news .img {
 	width: 350px;
 	height: 350px;
@@ -69,10 +65,6 @@
 	border-radius: 10px;
 	overflow: hidden;
 	transition: all ease-out 0.5s;
-}
-
-.all-news-section .boxes .box:hover {
-	transform: scale(1.02);
 }
 
 .all-news-section .boxes .box .img {

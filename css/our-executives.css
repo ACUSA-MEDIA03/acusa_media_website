@@ -20,11 +20,6 @@
 	margin-top: 4rem;
 }
 
-.executive-head p,
-h4 {
-	color: black;
-}
-
 .executive-head {
 	/* display: flex;
 	align-items: flex-start;
@@ -119,9 +114,6 @@ h4 {
 	border-radius: 10px;
 	overflow: hidden;
 	transition: all ease-out 0.5s;
-}
-.profile-section .boxes .box:hover {
-	transform: scale(1.02);
 }
 
 .profile-section .boxes .box .img {

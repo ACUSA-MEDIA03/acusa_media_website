@@ -45,10 +45,6 @@ h4 {
 	transition: all ease-out 0.5s;
 }
 
-.container .what-we-do-section .boxes .box:hover {
-	transform: scale(1.02);
-}
-
 .container .what-we-do-section .boxes .box .img {
 	height: 270px;
 }

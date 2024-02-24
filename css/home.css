@@ -103,10 +103,6 @@
 	height: 180px;
 }
 
-.past-executives-section .imgs .img:hover {
-	transform: scale(1.02);
-}
-
 .past-executives-section .imgs .img h6 {
 	position: absolute;
 	bottom: 0;
@@ -149,10 +145,6 @@
 	border-radius: 10px;
 	overflow: hidden;
 	transition: all ease-out 0.5s;
-}
-
-.latest-news-section .container .boxes .box:hover {
-	transform: scale(1.02);
 }
 
 .latest-news-section .container .boxes .box .img {

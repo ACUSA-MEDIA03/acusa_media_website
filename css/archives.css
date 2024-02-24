@@ -33,10 +33,6 @@
 	overflow: hidden;
 }
 
-.latest-archive-section .latest-archive:hover {
-	transform: scale(1.02);
-}
-
 .latest-archive-section .latest-archive .serial-number {
 	width: 350px;
 	height: 350px;
@@ -82,10 +78,6 @@
 	border-radius: 10px;
 	overflow: hidden;
 	transition: all ease-out 0.5s;
-}
-
-.all-archives-section .boxes .box:hover {
-	transform: scale(1.02);
 }
 
 .all-archives-section .boxes .box .serial-number {

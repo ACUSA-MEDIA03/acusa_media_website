@@ -118,6 +118,7 @@ async function displayAllNews() {
 
 // Display the latest news
 async function displayLatestNews() {
+	showSpinner();
 	// Get the news from the database
 	const res = await fetch(`${server}/api/news`);
 	const data = await res.json();
@@ -153,10 +154,13 @@ async function displayLatestNews() {
 
 	// Insert latest news section to the HTML page
 	document.querySelector("#latest-news-section").appendChild(div);
+	hideSpinner();
 }
 
 // Display the top 3 news for the home page
 async function displayTopThreeNews() {
+	document.querySelector("#latest-news-spinner").classList.add("show");
+
 	// Get all the news from the database
 	const res = await fetch(`${server}/api/news`);
 	const data = await res.json();
@@ -184,11 +188,14 @@ async function displayTopThreeNews() {
 
 		// Insert the new news into the HTML page
 		document.querySelector("#boxes").appendChild(div);
+
+		document.querySelector("#latest-news-spinner").classList.remove("show");
 	});
 }
 
 // Display the news details
 async function displayNewsDetails() {
+	showSpinner();
 	// Get the search query from the URL
 	const newsId = window.location.search.split("=")[1];
 
@@ -224,12 +231,19 @@ async function displayNewsDetails() {
 		document.querySelector("#news-details").appendChild(contentDiv);
 	});
 
+	console.log(data.post);
+
 	// Change the title of the page
 	document.title = `${data.title} | ACUSA Media`;
+	document
+		.querySelector('meta[name="description"]')
+		.setAttribute("content", `${data.post.slice(0, 2)}`);
+	hideSpinner();
 }
 
 // Display the latest article
 async function displayLatestArticle() {
+	showSpinner();
 	// Get the articles from the database
 	const res = await fetch(`${server}/api/articles`);
 	const data = await res.json();
@@ -265,10 +279,12 @@ async function displayLatestArticle() {
 
 	// Insert latest news section to the HTML page
 	document.querySelector("#latest-article-section").appendChild(div);
+	hideSpinner();
 }
 
 // Display the article for the week
 async function displayArticleForTheWeek() {
+	document.querySelector("#article-for-week-spinner").classList.add("show");
 	// Get the articles from the database
 	const res = await fetch(`${server}/api/articles`);
 	const data = await res.json();
@@ -302,6 +318,10 @@ async function displayArticleForTheWeek() {
 
 	// Insert article for the week section to the HTML page
 	document.querySelector("#article-for-week-section").appendChild(div);
+
+	document
+		.querySelector("#article-for-week-spinner")
+		.classList.remove("show");
 }
 
 // Display all articles
@@ -339,6 +359,7 @@ async function displayAllArticles() {
 
 // Display the article details
 async function displayArticleDetails() {
+	showSpinner();
 	// Get the search query from the URL
 	const articleId = window.location.search.split("=")[1];
 
@@ -396,10 +417,16 @@ async function displayArticleDetails() {
 	document.querySelector("#article-details").appendChild(writerDiv);
 	// Change the title of the page
 	document.title = `${data.title} | ACUSA Media`;
+	document
+		.querySelector('meta[name="description"]')
+		.setAttribute("content", `${data.post.slice(0, 2)}`);
+	hideSpinner();
+	hideSpinner();
 }
 
 // Display the latest archive
 async function displayLatestArchive() {
+	showSpinner();
 	// Get the archives from the database
 	const res = await fetch(`${server}/api/archives`);
 	const data = await res.json();
@@ -436,6 +463,7 @@ async function displayLatestArchive() {
 
 	// Insert latest news section to the HTML page
 	document.querySelector("#latest-archive-section").appendChild(div);
+	hideSpinner();
 }
 
 // Display all archives
@@ -474,6 +502,7 @@ async function displayAllArchives() {
 
 // Display the archive details
 async function displayArchiveDetails() {
+	document.querySelector(".spinner-white").classList.add("show");
 	// Get the search query from the URL
 	const archiveId = window.location.search.split("=")[1];
 
@@ -510,6 +539,10 @@ async function displayArchiveDetails() {
 
 	// Change the title of the page
 	document.title = `${data.title} | ACUSA Media`;
+	document
+		.querySelector('meta[name="description"]')
+		.setAttribute("content", `${data.post.slice(0, 2)}`);
+	document.querySelector(".spinner-white").classList.remove("show");
 }
 
 // Open questions in FAQs
@@ -546,7 +579,9 @@ const sendContact = async () => {
 
 				const newContact = { name, email, message };
 
-				const res = await fetch("http://localhost:5000/api/contact", {
+				showSmallSpinner();
+
+				const res = await fetch(`${server}/api/contact`, {
 					method: "POST",
 					body: JSON.stringify(newContact),
 					headers: {
@@ -569,6 +604,8 @@ const sendContact = async () => {
 				document
 					.querySelector("#contact-form")
 					.appendChild(notificationDiv);
+
+				hideSmallSpinner();
 			} catch (err) {
 				console.log(err);
 			}
@@ -593,6 +630,7 @@ const sendFeedback = async () => {
 
 				const newFeedback = { name, email, feedbackType, message };
 
+				showSmallSpinner();
 				const res = await fetch(`${server}/api/feedback`, {
 					method: "POST",
 					body: JSON.stringify(newFeedback),
@@ -617,6 +655,7 @@ const sendFeedback = async () => {
 				document
 					.querySelector("#feedback-form")
 					.appendChild(notificationDiv);
+				hideSmallSpinner();
 			} catch (err) {
 				console.log(err);
 			}
@@ -625,6 +664,7 @@ const sendFeedback = async () => {
 
 // Display all archives
 async function displayPodasts() {
+	showSpinner();
 	// Get all the podcasts from the database
 	const res = await fetch(`${server}/api/podcasts`);
 	const data = await res.json();
@@ -662,11 +702,13 @@ async function displayPodasts() {
 
 		// Insert the new archive into the HTML page
 		document.querySelector("#podcasts").appendChild(div);
+		hideSpinner();
 	});
 }
 
 // Get photos from Database for the gallery page
 async function getPhotos() {
+	showSpinner();
 	// Get all the photos from the database
 	const res = await fetch(`${server}/api/gallery`);
 	const data = await res.json();
@@ -712,6 +754,23 @@ async function getPhotos() {
 			document.removeEventListener("keydown", keyDownHandler);
 		};
 	});
+	hideSpinner();
+}
+
+function showSpinner() {
+	document.querySelector(".spinner").classList.add("show");
+}
+
+function hideSpinner() {
+	document.querySelector(".spinner").classList.remove("show");
+}
+
+function showSmallSpinner() {
+	document.querySelector(".spinner-small").classList.add("show");
+}
+
+function hideSmallSpinner() {
+	document.querySelector(".spinner-small").classList.remove("show");
 }
 
 // Init on the DOM Load

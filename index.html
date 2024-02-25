@@ -22,6 +22,11 @@
 		/>
 		<link rel="stylesheet" href="./css/style.css" />
 		<link rel="stylesheet" href="./css/home.css" />
+		<meta
+			name="description"
+			content="Welcome to the Ajayi Crowther University Student Assembly, ACUSA, your gateway to the vibrant world of student-led journalism, storytelling, and creative expression. As the pulse of campus life, we are dedicated to amplifying the voices, perspectives, and experiences of our student body."
+		/>
+
 		<title>ACUSA Media</title>
 	</head>
 	<body class="home-page">
@@ -84,7 +89,7 @@
 							<span
 								class="txt-type"
 								data-wait="3000"
-								data-words='["Voice of the student, ears of the management", "Voice of the student, strength of unity", "Voice of the student, Power and influence"]'
+								data-words='["voice of the student, ears of the management", "voice of the student, strength of unity", "voice of the student, Power and influence"]'
 							></span>
 						</h4>
 					</div>
@@ -138,6 +143,9 @@
 				id="article-for-week-section"
 			>
 				<h4>ARTICLES FOR THE WEEK</h4>
+				<div class="spinner-wrapper">
+					<div class="spinner" id="article-for-week-spinner"></div>
+				</div>
 			</section>
 
 			<!-- PAST ACUSA EXECUTIVES -->
@@ -207,6 +215,9 @@
 				<div class="container">
 					<h4>LATEST NEWS</h4>
 
+					<div class="spinner-wrapper">
+						<div class="spinner" id="latest-news-spinner"></div>
+					</div>
 					<div class="boxes" id="boxes"></div>
 					<div class="more-news">
 						<a href="news.html" class="btn btn-primary"

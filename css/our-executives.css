@@ -146,6 +146,14 @@
 	font-size: 0.7rem;
 }
 
+.line {
+	background-color: #333333;
+	padding: 0.1rem 0;
+	width: 100%;
+	margin: 4rem auto;
+	border-radius: 10px;
+}
+
 @media (max-width: 880px) {
 	.intro-section p {
 		width: 100%;

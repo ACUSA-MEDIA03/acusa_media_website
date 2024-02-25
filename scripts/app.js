@@ -290,16 +290,17 @@ async function displayArticleForTheWeek() {
 	const data = await res.json();
 	const articleForTheWeek = data[0];
 
-	// Check for the length of the news post
-	const articlePost =
-		articleForTheWeek.post[0].length <= 500
-			? articleForTheWeek.post[0]
-			: `${articleForTheWeek.post[0].substring(0, 500)}...`;
+	if (articleForTheWeek) {
+		// Check for the length of the news post
+		const articlePost =
+			articleForTheWeek.post[0].length <= 500
+				? articleForTheWeek.post[0]
+				: `${articleForTheWeek.post[0].substring(0, 500)}...`;
 
-	// Create the latest news details
-	const div = document.createElement("div");
-	div.classList.add("container");
-	div.innerHTML = `
+		// Create the latest news details
+		const div = document.createElement("div");
+		div.classList.add("container");
+		div.innerHTML = `
 					<div class="article-content">
 						<h5>${articleForTheWeek.title}</h5>
 						<h6>Posted on ${articleForTheWeek.date}</h6>
@@ -316,8 +317,11 @@ async function displayArticleForTheWeek() {
 					/>
 	`;
 
-	// Insert article for the week section to the HTML page
-	document.querySelector("#article-for-week-section").appendChild(div);
+		// Insert article for the week section to the HTML page
+		document.querySelector("#article-for-week-section").appendChild(div);
+	} else {
+		console.log("none");
+	}
 
 	document
 		.querySelector("#article-for-week-spinner")

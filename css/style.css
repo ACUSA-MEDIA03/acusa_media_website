@@ -573,4 +573,15 @@ footer {
 	.showcase-section {
 		height: 55vh;
 	}
+
+	.spinner,
+	.spinner-white {
+		width: 3rem;
+		height: 3rem;
+		border: 2px solid #333333;
+	}
+
+	.spinner-white {
+		border: 2px solid #cccccc;
+	}
 }

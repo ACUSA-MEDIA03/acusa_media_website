@@ -684,7 +684,6 @@ async function displayPodasts() {
 						</div>
 						<div class="audio_content">
 							<h5 id="title">${podcast.title}</h5>
-							<h6>Episode 104</h6>
 							<br />
 							<p>
 							${

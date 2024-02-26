@@ -234,7 +234,7 @@ async function displayNewsDetails() {
 	console.log(data.post);
 
 	// Change the title of the page
-	document.title = `${data.title} | ACUSA Media`;
+	document.title = `${data.title} | ACUSA`;
 	document
 		.querySelector('meta[name="description"]')
 		.setAttribute("content", `${data.post.slice(0, 2)}`);
@@ -420,7 +420,7 @@ async function displayArticleDetails() {
 
 	document.querySelector("#article-details").appendChild(writerDiv);
 	// Change the title of the page
-	document.title = `${data.title} | ACUSA Media`;
+	document.title = `${data.title} | ACUSA`;
 	document
 		.querySelector('meta[name="description"]')
 		.setAttribute("content", `${data.post.slice(0, 2)}`);
@@ -542,7 +542,7 @@ async function displayArchiveDetails() {
 	});
 
 	// Change the title of the page
-	document.title = `${data.title} | ACUSA Media`;
+	document.title = `${data.title} | ACUSA`;
 	document
 		.querySelector('meta[name="description"]')
 		.setAttribute("content", `${data.post.slice(0, 2)}`);

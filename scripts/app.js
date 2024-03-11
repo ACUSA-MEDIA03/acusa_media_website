@@ -231,8 +231,6 @@ async function displayNewsDetails() {
 		document.querySelector("#news-details").appendChild(contentDiv);
 	});
 
-	console.log(data.post);
-
 	// Change the title of the page
 	document.title = `${data.title} | ACUSA`;
 	document
@@ -320,7 +318,6 @@ async function displayArticleForTheWeek() {
 		// Insert article for the week section to the HTML page
 		document.querySelector("#article-for-week-section").appendChild(div);
 	} else {
-		console.log("none");
 	}
 
 	document
@@ -610,9 +607,7 @@ const sendContact = async () => {
 					.appendChild(notificationDiv);
 
 				hideSmallSpinner();
-			} catch (err) {
-				console.log(err);
-			}
+			} catch (err) {}
 		});
 };
 
@@ -660,9 +655,7 @@ const sendFeedback = async () => {
 					.querySelector("#feedback-form")
 					.appendChild(notificationDiv);
 				hideSmallSpinner();
-			} catch (err) {
-				console.log(err);
-			}
+			} catch (err) {}
 		});
 };
 

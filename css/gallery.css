@@ -117,4 +117,12 @@ h4 {
 		height: 400px;
 		width: 400px;
 	}
+
+	.photo:nth-child(3n + 1) {
+		grid-row: 2;
+	}
+
+	.photo:nth-child(2n + 1) {
+		grid-column: 2;
+	}
 }

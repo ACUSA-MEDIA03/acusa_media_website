@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Rubik+Dirt&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,7 +8,7 @@
 }
 
 body {
-	font-family: "Montserrat", sans-serif;
+	font-family: "Rubik";
 	font-size: 14px;
 	line-height: 1.7;
 	width: 100%;
@@ -233,48 +236,64 @@ form select option {
 	border-radius: 10px;
 }
 
-main {
-	margin-top: 150px;
-}
+
 
 /* HEADER SECTION */
 header {
-	background-color: #ffffff;
-	padding-top: 0.5rem;
+	/* background-color: #ffffff; */
 	position: fixed;
-	height: 150px;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 10;
-	/* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-		rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; */
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-header .head {
-	position: relative;
-}
-
-header .head .logo {
-	text-align: center;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
+	top: 0;
+	/* border: 1px solid red; */
+	left: 0;
+	padding: 20px 50px;
+	width: 100%;
+	z-index: 10;
+	/* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
 
-header .head .logo img {
-	width: 80px;
-	height: 80px;
-	border-radius: 100%;
+header .logo {
+	/* border: 1px solid red; */
+	display: flex; 
+	place-content: center;
+	align-items: center;
+	gap: 10px;
 }
 
-header .head .logo .acusa-logo {
-	width: 70px;
-	height: 70px;
+header .logo img {
+	width: 60px;
 }
 
-header .head .hamburger {
+header ul {
+	display: flex;
+	/* gap: 3px; */
+}
+
+header ul li {
+	text-align: center;
+	display: flex;
+}
+
+header ul li a {
+	/* font-weight: bolder; */
+	/* border: 1px solid blue; */
+	/* text-transform: uppercase; */
+	font-size: 15px;
+	padding: 15px;
+	color: whitesmoke;
+	/* padding: 10px 20px; */
+	transition: all ease-out 0.5s;
+}
+
+header ul li a:hover {
+	color: #102082;
+}
+
+
+/* ***** Hambuger Menu ****** */
+header .hamburger {
 	display: none;
 	position: absolute;
 	top: 50%;
@@ -282,7 +301,7 @@ header .head .hamburger {
 	transform: translate(-5%, -50%);
 }
 
-header .head .hamburger i {
+header .hamburger i {
 	color: #102082;
 	padding: 0.8rem;
 	border-radius: 100%;
@@ -292,41 +311,13 @@ header .head .hamburger i {
 	transition: all ease-out 0.5s;
 }
 
-header .head .hamburger i:hover {
+header .hamburger i:hover {
 	color: #000000;
 }
+/* ***** Hambuger Menu ****** */
 
-header .links {
-	background-color: #ffffff;
-	border-top: 3px solid #102082;
-	padding: 1rem 0;
-	/* border-bottom: 3px solid #102082; */
-}
+/* HEADER SECTION */
 
-header .links .container {
-	width: 95%;
-}
-
-header .links ul {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	text-transform: uppercase;
-}
-
-header .links ul li {
-	text-align: center;
-}
-
-header .links ul li a {
-	font-weight: bolder;
-	font-size: 11px;
-	transition: all ease-out 0.5s;
-}
-
-header .links ul li a:hover {
-	color: #102082;
-}
 
 /* FOOTER SECTION */
 footer {
@@ -340,32 +331,38 @@ footer {
 /* SHOWCASE SECTION FOR ALL PAGES */
 .showcase-section {
 	position: relative;
-	height: 70vh;
+	/* border: 5px solid orange; */
+	background-color: #101f82cb;
+	/* margin-top: 85px; */
 }
 
 .showcase-section .details-fill {
 	background-color: transparent;
-	position: absolute;
-	top: 0%;
-	left: 0%;
-	transform: translate(0%, 0%);
-	width: 100%;
-	height: 100%;
+	position: relative;
 	color: #ffffff;
+	display:  flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .showcase-section .details {
 	display: flex;
+	/* position: absolute; */
+	height: 90vh;
+	padding: 90px;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	text-align: center;
-	height: 100%;
+
 }
 
 .showcase-section .details h1 {
 	text-transform: uppercase;
 	text-align: center;
+	letter-spacing: 2px;
+	font-family: "Rubik Dirt";
+	font-weight: 400;
 }
 
 /* Cursor */
@@ -435,19 +432,19 @@ footer {
 		border-bottom: 3px solid #102082;
 	}
 
-	header .head {
+	header {
 		position: relative;
 	}
 
-	header .head .logo {
+	header .logo {
 		text-align: center;
 	}
 
-	header .head .hamburger {
+	header .hamburger {
 		display: block;
 	}
 
-	header .links {
+	header {
 		position: fixed;
 		top: 100px;
 		right: 0;
@@ -460,23 +457,23 @@ footer {
 		transition: all ease-out 0.5s;
 	}
 
-	header .links ul {
+	header ul {
 		display: block;
 	}
 
-	header .links ul li {
+	header ul li {
 		background-color: #e5e8eb;
 		margin: 0.5rem 0;
 		padding: 0.5rem;
 		text-align: left;
 	}
 
-	header .links ul li a {
+	header ul li a {
 		width: 100%;
 		display: inline-block;
 	}
 
-	header .links-open {
+	header open {
 		left: 0;
 	}
 
